@@ -1,0 +1,6 @@
+URL - https://github.com/Tanmay782000/task2repository
+
+issue -
+1)craete new remote repository
+2)add .init file on local folder (without clone the created remote repository).
+3)than commit locally created file on remote repository

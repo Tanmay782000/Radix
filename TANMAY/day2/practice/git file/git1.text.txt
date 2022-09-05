@@ -1,0 +1,6 @@
+URL -> httpsgithub.comTanmay782000day2
+
+1) make clone of remote repository to local
+2) If user simulteneously make changes in .html file
+   using stash command user get the previous file as a 
+   backup(one type of recycle bin )

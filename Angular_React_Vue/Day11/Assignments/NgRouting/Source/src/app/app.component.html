@@ -1,0 +1,23 @@
+<div class="container-fluid">
+    <div class="row">
+     <h2 class="bg-warning col-12 sticky-top text-center">MY RESUME</h2>
+     <div class="col-4 w-25 sticky-left bg-danger ml-0 ">
+       <ol class="list-unstyled">
+          <div class="text-center">
+           <li><img [src]="myimage" class="border-dark border-4 img-thumbnail p-2 mt-2 text-center h-25" alt="profile"></li>
+         </div>
+         </ol>
+       <span class="d-block mb-3 p-2 text-center bg-primary text-white"><a routerLink="/" class="text-decoration-none text-white">About</a></span>
+       <span class="d-block mb-3 p-2 text-center bg-dark text-white"><a routerLink="/education" class="text-decoration-none text-white">Education</a></span>
+       <span class="d-block mb-3 p-2 text-center bg-primary text-white"><a routerLink="/skill" class="text-decoration-none text-white">Skills</a></span>
+       <span class="d-block mb-3 p-2 text-center bg-dark text-white"><a routerLink="/project" class="text-decoration-none text-white">Projects</a></span>
+     </div>
+
+    <div class="col-8 w-75 bg-dark overflow-auto">
+
+    <router-outlet></router-outlet>
+    
+    </div>
+
+</div>  
+</div>

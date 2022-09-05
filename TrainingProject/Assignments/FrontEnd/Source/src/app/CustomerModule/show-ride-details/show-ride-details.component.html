@@ -1,0 +1,29 @@
+
+<div class="card mt-3 shadow-lg p-3 mb-5 bg-black rounded" style="width:50rem;">
+
+<ng-container *ngIf="bool;then thisblock else thatblock"></ng-container>
+<ng-template #thisblock>
+    <h3 class="d-flex justify-items-center text-danger">{{cll}}</h3>
+    <div class="row">
+        <div class="col-sm-4 ml-2" *ngFor="let item of TempArray">
+            <span class="ml-2"><img [src]="item.profile" class="ml-2" width="265px" height="270px"></span>
+        </div>
+        <div class="col-sm-8">
+       <div class="card-header" *ngFor="let item of TempArray">
+           <h3 class="text-white">Driver Name:{{item.driverName}}</h3>
+           <h3 class="text-white">Distance:{{item.distance}} Kms</h3>
+           <h3 class="text-white">Vehicle Name:{{item.vehicleName}}</h3>
+           <h3 class="text-white">Amount:{{item.amount}} INR</h3>
+           <h3 class="text-white">Licence No:{{item.vehicleLicence}}</h3>
+           <h3 class="text-white">Pin:<span class="text-danger">{{item.secratePin}}</span></h3>
+       </div>       
+    </div>
+</div>
+</ng-template>
+<ng-template #thatblock>
+    <div class="card-header">    
+    <h3 class="d-flex justify-items-center text-success">{{Wait}}</h3>
+    <h3 class="d-flex justify-items-center text-success">{{success}}</h3>
+</div>
+</ng-template>
+</div>

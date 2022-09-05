@@ -1,0 +1,109 @@
+* body{
+  margin:0;
+  background-color: black;
+}
+.center{
+  text-align: center;
+}
+.sidebar {
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  background-color: #f1f1f1;
+  position: fixed;
+  height: 100%;
+  overflow: hidden;
+}
+main{
+  overflow: auto;
+  margin-left: 210px;
+}
+.sidebar a {
+  display: block;
+  color: black;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 30px;
+  background-color: #04AA6D;
+  border: 2px solid white;
+  text-decoration: none;
+  margin-top: 20px;
+  text-align: center;
+  font-size: larger;
+}
+
+ 
+.sidebar a:hover {
+  background-color: #555;
+  color: white;
+}
+
+
+#introduction{
+  font-size: xx-large;
+  background-color: #04AA6D;
+}
+#education{
+  font-size:xx-large;
+  background-color: #04AA6D;
+  margin-top: 1000px;
+}
+#education table tr th{
+    background-color: royalblue;
+}
+#skill{
+  font-size:xx-large;
+  background-color: #04AA6D;
+  margin-top: 1000px;
+}
+main{
+  color: brown;
+}
+#project{
+  font-size:xx-large;
+  background-color: #04AA6D;
+  margin-top: 1000px;
+}
+#specialization{
+  font-size:xx-large;
+  background-color: #04AA6D;
+  margin-top: 1000px;
+  margin-bottom: 1000px;
+}
+
+.sidebar img{
+  height: 25%;
+  width: 75%;
+  margin-top: 20px;
+ 
+}
+@media screen and (max-width: 700px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  main{
+    width: 100%;
+    margin-left: 0px;
+    overflow:scroll
+  }
+  #education{
+    font-size: small;
+  }
+  #introduction{
+    font-size: small;
+  }
+  #skill{
+    font-size: small;
+  }
+  #project{
+    font-size: small;
+  }
+  #specialization{
+    font-size: small;
+  }
+  .sidebar a{
+  margin-bottom: 20px;
+  }
+}

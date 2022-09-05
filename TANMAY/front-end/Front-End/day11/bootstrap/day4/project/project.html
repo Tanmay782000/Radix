@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="node_modules/css">
+    <link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm fixed-top text-white bg-dark navbar-dark">
+        <div class="container">
+          <a class="navbar-brand" href="#">Blogen</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav">
+              <li class="nav-item ">
+                <a class="nav-link" href="#home">Dashboard</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="post.html">Post</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="category.html">Categories</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="Users.html">Users</a>
+              </li>   
+            </ul>
+            <div class="ms-auto">
+             <ul class="navbar-nav">
+                <li class="nav-item">
+                    <div class="dropdown">
+                        <div class="btn btn-dark fa fa-user dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                          Welcome brand
+                        </div>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                          <li><a class="dropdown-item fa fa-user-circle" href="profile.html">Profile</a></li>
+                          <li><a class="dropdown-item fa fa-cog" href="settings.html">Settings</a></li>
+                        </ul>
+                      </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link fa fa-sign-out" href="login.html">Logout</a>
+                    </li>
+                </ul>
+                </div>
+          </div>
+        </div>
+      </nav>
+      <div class="bg-primary" id="dashboard">
+          <div class="container">
+              <h1 class="fa fa-cog fa-3x text-white">&nbsp;Dashboard</h1>
+          </div>
+      </div>
+      <div class="bg-white">
+        <div class="container">
+           <div class="row">
+               <div class="col-sm-3 mt-4 mb-4">
+             <button type="submit" data-bs-toggle="modal" data-bs-target="#addpost" class="btn btn-primary fa fa-plus w-100">Add post</button>
+             </div>
+             <div class="col-sm-3 mt-4 mb-4">
+             <button type="submit" data-bs-toggle="modal" data-bs-target="#addcategory"  class="btn btn-success fa fa-plus w-100">Add Category</button>
+             </div>
+             <div class="col-sm-3 mt-4 mb-4">
+             <button type="submit" data-bs-toggle="modal" data-bs-target="#adduser"  class="btn btn-warning fa fa-plus w-100">Add User</button>
+             </div>    
+           </div>
+        </div>
+    </div>
+    <div class="container">
+       <div class="row">
+          <div class="col-sm-8">
+            <table class="table table-striped table-bordered" aria-describedby="table2">
+                <thead>
+                  <tr>
+                       <th scope="col" class="h2" colspan="5">Latest Posts</th>
+                  </tr>
+                  </thead>
+                  <thead class="bg-dark text-white">
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">First</th>
+                    <th scope="col">Category</th>
+                    <th scope="col">Date Posted</th>
+                    <th scope="col"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>Post One</td>
+                    <td>Web Development</td>
+                    <td>July 12,2017</td>
+                    <td class="text-center"><button type="submit" class="btn btn-dark opacity-50 fa fa-arrow-circle-o-right"><a href="details.html" class="text-decoration-none text-white">Details</a></button></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>Post Two</td>
+                    <td>Tech Gadgets</td>
+                    <td>July 13,2017</td>
+                    <td class="text-center"><button type="submit" class="btn btn-dark opacity-50 fa fa-arrow-circle-o-right"><a href="details.html" class="text-decoration-none text-white">Details</a></button></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td>Post Three</td>
+                    <td>Web Development</td>
+                    <td>July 14,2017</td>
+                    <td class="text-center"><button type="submit" class="btn btn-dark opacity-50 fa fa-arrow-circle-o-right"><a href="details.html" class="text-decoration-none text-white">Details</a></button></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">4</th>
+                    <td>Post Four</td>
+                    <td>Business</td>
+                    <td>July 14,2017</td>
+                    <td class="text-center"><button type="submit" class="btn btn-dark opacity-50 fa fa-arrow-circle-o-right"><a href="details.html" class="text-decoration-none text-white">Details</a></button></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">5</th>
+                    <td>Post Five</td>
+                    <td>Web Development</td>
+                    <td>July 15,2017</td>
+                    <td class="text-center"><button type="submit" class="btn btn-dark opacity-50 fa fa-arrow-circle-o-right"><a href="details.html" class="text-decoration-none text-white">Details</a></button></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">6</th>
+                    <td>Post Six</td>
+                    <td>Health & Wellness</td>
+                    <td>July 16,2017</td>
+                    <td class="text-center"><button type="submit" class="btn btn-dark opacity-50 fa fa-arrow-circle-o-right"><a href="details.html" class="text-decoration-none text-white">Details</a></button></td>
+                  </tr>
+                </tbody>
+              </table>
+          </div>
+          <div class="col-sm-4">
+              <div class="row">
+                <div class="card w-50  bg-primary text-white text-center">
+                <div class="card-body">
+                    <h5 class="card-title">Posts</h5>
+                    <p class="card-text fa fa-paint-brush fa-2x">&nbsp;6</p><br>
+                    <a href="#" class="btn btn-outline-light ">View</a>
+                  </div>
+                </div>
+              </div>
+              <div class="row mt-2">
+                <div class="card w-50  bg-success text-white text-center">
+                <div class="card-body">
+                    <h5 class="card-title">Posts</h5>
+                    <p class="card-text fa fa-folder fa-2x">&nbsp;4</p><br>
+                    <a href="#" class="btn btn-outline-light ">View</a>
+                  </div>
+                </div>
+              </div>
+              <div class="row mt-2">
+                <div class="card w-50  bg-warning text-white text-center">
+                <div class="card-body">
+                    <h5 class="card-title">Posts</h5>
+                    <p class="card-text fa fa-users fa-2x">&nbsp;2</p><br>
+                    <a href="#" class="btn btn-outline-light ">View</a>
+                  </div>
+                </div>
+              </div>
+          </div>
+       </div>
+    </div>
+<footer class="bg-dark">
+    <p class="text-white text-center mt-1 opacity-50">Copyright @2017 blogen</p>
+</footer>
+<div class="modal fade" role="dialog" id="addcategory">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header bg-success">
+          <h4 class="modal-title">Contact us</h4>
+          <button type="button"  class="btn-close" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="container">
+          <form>
+          <div class="form-group">
+                  <label for="Name">Title</label>
+                  <input type="text" name="Title" class="form-control">
+          </div><br>
+        <div class="model-footer float-end">
+          <button type="submit" class="btn btn-dark opacity-50">close</button>
+          <button type="submit" class="btn btn-success bg-success">Save changes</button>
+          </div>
+        </form>
+      </div>
+   </div>           
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" role="dialog" id="adduser">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header bg-warning">
+          <h4 class="modal-title">Contact us</h4>
+          <button type="button"  class="btn-close" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="container">
+          <form>
+          <div class="form-group">
+                  <label for="Name">Name</label>
+                  <input type="text" name="username" class="form-control">
+          </div><br>
+          <div class="form-group">
+            <label for="Email">Email</label>
+            <input type="text" name="Email" class="form-control">
+          </div><br>
+          <div class="form-group">
+            <label for="Password">Password</label>
+            <input type="Password" name="Password" class="form-control">
+          </div><br>
+          <div class="form-group">
+            <label for="Confirm-password">Confirm-password</label>
+            <input type="password" name="password-confirm" class="form-control">
+          </div><br>
+        <div class="model-footer float-end">
+            <button type="submit" class="btn btn-dark opacity-50">close</button>
+          <button type="submit" class="btn btn-success bg-warning">Save changes</button>
+          </div>
+        </form>
+      </div>
+   </div>           
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" role="dialog" id="addpost">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header bg-warning">
+          <h4 class="modal-title">Contact us</h4>
+          <button type="button"  class="btn-close" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="container">
+          <form>
+          <div class="form-group">
+                  <label for="Name">Name</label>
+                  <input type="text" name="username" class="form-control">
+          </div><br>
+          <div class="form-group">
+            <label for="Title">Title</label>
+            <input type="text" name="Title" class="form-control">
+          </div><br>
+          <div class="form-group">
+            <label for="Category">Category</label>
+            <input type="text" name="Category" placeholder="Web developement" class="form-control">
+          </div><br>
+          <div class="form-group">
+            <label for="imageUpload">Image Upload</label>
+            <input type="file" id="myfile" class="form-control">
+            <small>max file 50mb</small>
+          </div><br>
+        <div class="model-footer float-end">
+            <button type="submit" class="btn btn-dark opacity-50">close</button>
+          <button type="submit" class="btn btn-success bg-warning">Save changes</button>
+          </div>
+        </form>
+      </div>
+   </div>           
+      </div>
+    </div>
+  </div>
+</body>
+</html>

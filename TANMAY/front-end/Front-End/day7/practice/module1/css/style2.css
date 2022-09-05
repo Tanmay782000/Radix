@@ -1,0 +1,20 @@
+p.first{
+    border-style: solid;
+    border-color: brown;
+    background-color: aqua;
+  }
+  p.second{
+    border-style: dotted;
+    border-color: green;
+    background-color:gray;
+    border-bottom:6px solid blue;
+  }
+  p.third{
+    border-style: dotted;
+    border-left:6px solid rgb(0, 128, 28);
+    border-color: brown;
+    background-color: rgb(255, 145, 0);
+  }
+  h3{
+      text-align: center;
+  }

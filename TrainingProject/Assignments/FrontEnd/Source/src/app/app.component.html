@@ -1,0 +1,57 @@
+<div class="bg-black">
+
+    <!-- <ng-container *ngIf="bool2;then tblock else vblock">    </ng-container>
+
+     
+        <ng-template #tblock>
+    
+            <h1 class="text-white">logged in </h1>
+    
+        </ng-template>
+    
+        <ng-template #vblock>
+    
+            <h1>not loggedin</h1>
+    
+        </ng-template> -->
+
+
+    <ng-container *ngIf="bool; then thisblock else (bool2 && second) || firstblock"></ng-container>
+
+    <ng-template #thisblock>
+        <nav class="navbar navbar-dark container">
+            <a class="navbar-brand ml-5 text-white" routerLink="/Home">Uber</a>
+            <div>
+                <button class="text-white btn btn-dark  ms-auto" id="btn1" routerLink="/BasicDetails">Show
+                    Profile</button>
+                <button (click)="Logout()" class="btn btn-dark text-white" id="btn2">logout</button>
+            </div>
+        </nav>
+    </ng-template>
+
+    <ng-template #firstblock>
+        <nav class="navbar navbar-dark container">
+            <a class="navbar-brand ml-5 text-white" routerLink="/Home">Uber</a>
+            <a class="navbar-brand mr-5 ms-auto text-white" routerLink="/Driver">Driver</a>
+            <a class="navbar-brand mr-5 text-white" routerLink="/Customer">Customer</a>
+        </nav>
+
+    </ng-template>
+    <ng-template #second>
+
+
+        <nav class="navbar navbar-dark container">
+            <a class="navbar-brand ml-5 text-white" routerLink="/Home">Uber</a>
+            <button routerLink="/DriverUpdateForm" class="text-white btn btn-dark ms-auto btn btn-black" id="btn1">Show Profile</button>
+            <button routerLink="/RideHistory" class="text-white btn btn-black">Ride History</button>
+            <button routerLink="/Login" class="btn btn-dark text-white" btn btn-black id="btn2">logout</button>
+        </nav>
+    </ng-template>
+
+</div>
+
+
+
+<div id="hello">
+    <router-outlet></router-outlet>
+</div>

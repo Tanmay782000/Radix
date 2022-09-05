@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="ad">
+    <button type="button" onclick="result(ad.value,prt)">submit</button>
+    <p id="final"></p>
+    <script>
+     function result(a,callback)
+     {
+        var d = a*a
+        callback(d)
+     }
+     
+     function prt(final)
+     {
+     document.getElementById("final").innerHTML = final
+     }
+     </script>
+</body>
+</html>

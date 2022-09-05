@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="jsfiles/assg1.js">
+       
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <body>
+
+        <form action="" method="POST">
+            <div>
+                   <label>First Value</label>
+                   <input type="number" name="first_TextBox_Value" id="number1_TextBox" autofocus="autofocus">
+                   <br><br>
+                   <label>Second Value</label>
+                   <input type="number" name="second_TextBox_Value" id="number2_TextBox">
+               
+            </div>
+            <h2>Math Operators</h2>
+            <div>
+               
+                    <input type="radio" name="math_Operators" onclick="reset_Operators();"/>   <label>Addition</label>
+                    <input type="radio" name="math_Operators" onclick="reset_Operators();"/>   <label>Subtraction</label>
+               
+                    <input type="radio" name="math_Operators" onclick="reset_Operators();"/>   <label>Multiplication</label>
+                    <input type="radio" name="math_Operators" onclick="reset_Operators();"/>   <label>Division</label>
+               
+            </div>
+            <br/>
+            <br/>           
+            <input type="submit" value="Solve" onclick="return solve();" />
+            <input type="submit" value="Clear" onclick="return clear();" />
+            <br/>
+            <br/>
+            <div id="math_Results"></div>
+            </form>
+    </body>
+</body>
+
+</html>

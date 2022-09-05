@@ -1,0 +1,29 @@
+*{
+    background-color: orange;
+}
+header{
+      text-align: center;
+      background-color: aqua;
+}
+.my p{
+    border:1px solid red;
+    height:600px;
+    width:300px;
+    float:left;
+    margin-top: 10px; 
+    background-color: greenyellow;
+}
+.my2 p{
+    border:1px solid red;
+    height:600px;
+    width:300px;
+    float:right;
+    margin-top: 10px;  
+    background-color: rgb(74, 196, 212);
+}
+@media only screen and (max-width:700px) and (min-width:695px)
+{
+    .my p{
+        display: none;
+    }
+}

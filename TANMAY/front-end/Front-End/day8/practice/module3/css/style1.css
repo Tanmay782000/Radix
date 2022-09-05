@@ -1,0 +1,11 @@
+.flex{
+    display: flex;
+    background-color: royalblue;
+    width:max-content;
+}
+.flex div{
+    background-color:yellowgreen;
+    margin:20px;
+    padding:20px;
+    font-size: 30px;
+}

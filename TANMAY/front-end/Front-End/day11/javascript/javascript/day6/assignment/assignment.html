@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+    </head>
+<body class="bg-primary">
+ <h1 class="text-center text-black">Add Food</h1>
+    <div class="bg-danger mt-3">
+    <table id="demo" class="table text-white" aria-describedby="table">
+        <thead class="thead-dark">
+        <tr>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Location</th>   
+        </tr>  
+        </thead>
+    <tbody>
+    </tbody>
+       </table>
+    </div>
+       <button type="button" class="btn btn-dark text-white w-100" onclick="showcart()">showcart</button>
+       <p id="result" class="text-white mt-4 bg-danger"></p>
+
+   <script>
+    var myarray = [
+    { "Name": "Cheese", "Price" : 2.50, "Location": "Refrigerated foods"},
+    { "Name": "Crisps", "Price" : 3, "Location": "the Snack isle"},
+    { "Name": "Pizza", "Price" : 4, "Location": "Refrigerated foods"},
+    { "Name": "Chocolate", "Price" : 1.50, "Location": "the Snack isle"},
+    { "Name": "Self-raising flour", "Price" : 1.50, "Location": "Home baking"},
+    { "Name": "Ground almonds", "Price" : 3, "Location": "Home baking"}
+]
+buildtable(myarray)   
+function buildtable(data){
+    var table = document.getElementById("demo")
+    for (var i = 0; i < data.length;i++)
+    { 
+        var row = `
+                   <tr>
+                   <td>${data[i].Name}</td>
+                   <td>${data[i].Price}</td>
+                   <td>${data[i].Location}</td>
+                   <td><button class="btn btn-warning"><a href="#" onclick="highlight_row()" class="text-white text-decoration-none">add to cart</button></a></td>
+                   </tr>
+                   `
+                   table.innerHTML += row
+    }
+}
+function highlight_row() {
+    var table = document.getElementById('demo');
+    var cells = table.getElementsByTagName('td');
+
+    for (var i = 0; i < cells.length; i++) {
+        
+        var cell = cells[i];
+        
+        cell.onclick = function () {
+           
+            var rowId = this.parentNode.rowIndex;
+
+            var rowsNotSelected = table.getElementsByTagName('tr');
+            var rowSelected = table.getElementsByTagName('tr')[rowId];
+
+            msg = rowSelected.cells[0].innerHTML;
+            msg += rowSelected.cells[1].innerHTML;
+            msg +=  rowSelected.cells[2].innerHTML;
+            var m = JSON.stringify(msg)
+            alert("data successfully added to cart")            
+            console.log(localStorage.setItem("name",m))
+        }
+    }
+
+}
+function showcart(data2)
+{
+    document.getElementById("result").innerHTML = localStorage.getItem("name")
+}
+</script>
+</body>
+</html>

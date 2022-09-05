@@ -1,0 +1,38 @@
+<div class="container">
+
+    <div class="d-flex justify-content-between mt-3 mb-3">
+        <button class="btn btn-success" (click)="confirm()">Confirmed</button>
+        <button class="btn btn-danger" (click)="cancel()">Canceled</button>
+        <button class="btn btn-primary ml-4" (click)="pending()">Pending</button>
+    </div>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Phone Id</th>
+                <th>Object Name</th>
+                <th>Create Data</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            <ng-container *ngIf="bool;then thiss else thatt"></ng-container>
+            <ng-template #thiss>
+                <tr *ngFor="let item of Array">
+                    <td>{{item.phnId}}</td>
+                    <td>{{item.sourcetoDestination}}</td>
+                    <td>{{item.objName}}</td>
+                    <td>{{item.cdate}}</td>
+                </tr>
+            </ng-template>
+            <ng-template #thatt>
+                <tr *ngFor="let item of Confirmed">
+                    <td>{{item.phnId}}</td>
+                    <td>{{item.sourcetoDestination}}</td>
+                    <td>{{item.objName}}</td>
+                    <td>{{item.cdate}}</td>
+                </tr>
+            </ng-template>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,11 @@
+<div class="card w-25 p-3 mx-auto mt-4">
+    <div class="card-header bg-white">
+        <label class="text-center" for="otp">Enter the 3-digit code sent to you at {{InitNumber}} </label>
+    </div>
+    <div>
+        <form [formGroup]="OTPForm" class="w-50 mx-auto  mt-3" (ngSubmit)="CheckOup()">
+            <input type="text" class="form-control" name="otp" [ngModelOptions]="{standalone: true}" [(ngModel)]="TempCode">
+            <button class="btn btn-success mt-3 w-100 text-center bg-dark">Submit</button>
+        </form>
+    </div>
+</div>

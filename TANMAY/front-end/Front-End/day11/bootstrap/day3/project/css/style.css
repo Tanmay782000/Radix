@@ -1,0 +1,18 @@
+.navbar{
+    border-bottom: 4px solid blue;
+}
+.navbar-toggler{
+    color:white;
+}
+#first{
+margin-top:0;
+}
+@media(max-width:576px){
+  #col1{
+    display : none;
+  }
+}
+#col1,#col2{
+ margin-top:100px;
+ margin-bottom:20px;  
+}

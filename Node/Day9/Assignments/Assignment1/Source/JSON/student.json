@@ -1,0 +1,32 @@
+[{
+    "id":1,
+    "name":"tanmay",
+    "fees":{
+        "semester 1":"paid",
+        "semester 2":"paid",
+        "semester 3":"unpaid",
+        "semester 4":"paid"
+    },
+    "result":{
+        "semester 1":"8 SPI",
+        "semester 2":"7 SPI",
+        "semester 3":"7.5 SPI",
+        "semester 4":"7 SPI"
+    }
+},
+{
+    "id":2,
+    "name":"vishwa",
+    "fees":{
+        "semester 1":"paid",
+        "semester 2":"unpaid",
+        "semester 3":"unpaid",
+        "semester 4":"paid"
+    },
+    "result":{
+        "semester 1":"9 SPI",
+        "semester 2":"9.5 SPI",
+        "semester 3":"8.5 SPI",
+        "semester 4":"7.5 SPI"
+    }
+}]

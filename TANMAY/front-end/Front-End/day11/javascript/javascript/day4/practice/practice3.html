@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<p id="demo"></p>
+<p id="demo2"></p>
+<p id="demo3"></p>
+
+<body>
+    <script>
+    var counter = 10;
+    var counter = 20;
+    document.getElementById("demo").innerHTML ="It consider the latest declaration:" + counter // it consider the latest declaration of variable
+    function VAR(a)
+    {
+     var a = 5;
+     if(a == 5)
+     {
+         return true
+     }
+     else{
+        return false
+     }
+    } 
+    document.getElementById("demo2").innerHTML =  "var a is outside the if condition:" + VAR()
+
+
+    function LET(b)
+    {
+    //if here I declare let keyword it throws me variable already declared error in console
+    //let b = 5
+    if(b == 5)
+     {
+         return true
+     }
+     else{
+        return false
+     }
+    } 
+    document.getElementById("demo3").innerHTML =  "Let b is outside the if condition:" + LET()
+
+</script>
+</body>
+</html>

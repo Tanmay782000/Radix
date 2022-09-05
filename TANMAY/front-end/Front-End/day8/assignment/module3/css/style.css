@@ -1,0 +1,15 @@
+header{
+    padding:25px;
+    text-align: center;
+    color:white;
+    background-color: red;
+    width:1130px;
+    position:static;
+}
+#hello li{
+    display: inline;
+    list-style-type: none
+}
+a{
+    color: whitesmoke;
+}

@@ -1,0 +1,10 @@
+const[color,setColor] = useState()
+
+color-> Is for current state
+setColor-> Is for further updated state 
+https://stackblitz.com/edit/react-xarjm5?file=src%2FApp.js
+
+
+----------------------------------------------------------
+dependancy injection
+authgaurd 

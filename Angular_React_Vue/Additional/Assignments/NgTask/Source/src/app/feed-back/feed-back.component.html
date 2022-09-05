@@ -1,0 +1,64 @@
+<div class="row container">
+
+  <h1 class="text-warning mt-4 text-center">Add Product Feedback</h1>
+  <app-form-component (Lapp)="listapp($event)" class="mt-4"></app-form-component>
+  <h1 class="text-warning mt-4 text-center">Show Feedback</h1>
+  <div class="row">
+    <div class="col-sm-4">
+      <button (click)="filter()" class="btn btn-danger w-100">FilterByName</button>
+    </div>
+    <div class="col-sm-4">
+      <div class="form-group row">
+        <div class="col-sm-2">
+          <label for="Search">Search:</label>
+        </div>
+        <div class="col-sm-10">
+          <input class="form-control" [(ngModel)]="searchtext" type="text">
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div ngbDropdown>
+        <button class="form-control btn btn-danger" id="gfg" ngbDropdownToggle>SortByFeedback</button>
+        <div ngbDropdownMenu="gfg">
+          <button (click)="Poor()" ngbDropdownItem>Poor</button>
+          <button (click)="Average()" ngbDropdownItem>Average</button>
+          <button (click)="Good()" ngbDropdownItem>Good</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <table class="table table-striped" aria-describedby="table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Product Feedback</th>
+        <th>Date</th>
+        <th>FeedBack Details</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <div *ngIf="submitdata; then thenBlock else first"></div>
+      <ng-template #thenBlock>
+        <tr *ngFor="let item of DataArray | filter:searchtext">
+          <td>{{item.OrderId}}</td>
+          <td>{{item.Name}}</td>
+          <td>{{item.FeedBackInfo}}</td>
+          <td>{{item.FeedBackDate}}</td>
+          <td>{{item.FeedBackDetails}}</td>
+        </tr>
+      </ng-template>
+      <ng-template #first>
+          <tr *ngFor="let item of NewArray">
+            <td>{{item.Name}}</td>
+            <td>{{item.OrderId}}</td>
+            <td>{{item.FeedBackInfo}}</td>
+            <td>{{item.FeedBackDate}}</td>
+            <td>{{item.FeedBackDetails}}</td>
+          </tr>
+      </ng-template>
+    </tbody>
+  </table>
+ 

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="#" name="frmregister" onsubmit="return formValidation();">
+    <label for="employeecode">Ecode</label>
+    <input type="text" name="emp_code" id="emp_code"><br><br>
+    <label for="emailid">Email</label>
+    <input type="text" name="email" id="email"><br><br>
+    <label for="Age">Age</label>
+    <input type="text" name="age" id="age"><br><br>
+    <label id="gender">Gender:</label>
+    <input name="gender1" id="gender11" type="radio" value="m">Male
+    <input name="gender2" id="gender22" type="radio" value="f">Female<br><br>
+    <label for="date">date</label>
+    <input type="text" name="date" id="date"><br><br>
+    <label for="state">state</label>
+    <select name="emptydropdown">
+        <option value=" "></option>
+        <option value="gujarat">gujarat</option>
+        <option value="surat">surat</option>
+        <option value="ahmedabad">ahmedabad</option>
+        <option value="kuttch">kuttch</option>
+       </select><br><br>
+    <input alt="Submit" type="submit" value="Submit" onclick="alldone(result)">
+    </form>
+    <script>
+
+function formValidation()
+{
+var email = document.frmregister.email;
+var emp_code = document.frmregister.emp_code;
+var age = document.frmregister.age;
+var date = document.frmregister.date;
+var empty = document.frmregister.emptydropdown
+if(emp_vali(emp_code))
+{
+}
+if(email_vali(email))
+{
+}
+if(age_vali(age))
+{
+}
+if(date_vali(date))
+{
+
+}
+if(empty_vali(empty))
+{
+
+}
+}
+
+
+function emp_vali(emp_code)
+{
+var number_format = /[0-9]/g; 
+if(!emp_code.value == " ")
+{
+ if(!emp_code.value.match(number_format))
+ {
+    alert("wrong")
+    return false
+ }
+if(emp_code.value.length<5)
+{
+    alert("maximum 5 numbers required")
+    return false
+}
+else{
+    return true
+}
+}
+else{
+    alert("Emp code is black");
+    return false
+}
+return true
+
+}
+
+
+function email_vali(email)
+{
+if(!email == " ")
+{
+var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+if(email.value.match(mailformat))
+{
+return true;
+}
+else
+{
+alert("You have entered an invalid email address!");
+return false;
+}
+}
+else{
+    alert("email field is empty")
+}
+return true;
+}
+
+
+function age_vali(age)
+{
+if(!age.value == " ")
+{    
+var number_format1 = /[0-9]/g;
+if(age.value.match(number_format1))
+{
+    return true;
+}
+else 
+{ 
+    alert('wrong format')
+    return false;
+}
+}
+else{
+    alert("age field is empty")
+}     
+return true
+}
+
+
+function date_vali(date)
+{
+    var date1 = /^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$/;
+    if(date.value.match(date1))
+    {
+        return true
+    }
+    else
+    {
+        alert('enter valid date')
+        return false
+    }
+    return true
+}
+
+function empty_vali(empty)
+{
+    var a = empty.length
+    if(!a.value == " ")
+    {
+        alert('empty dropdown')
+        return false
+    }
+    else
+    {
+        return true
+    }
+    return true
+}
+
+
+function alldone(result)
+{
+    if(formValidation() == True)
+    {
+    alert("data submitted")
+    }
+}
+</script>
+</body>
+</html>

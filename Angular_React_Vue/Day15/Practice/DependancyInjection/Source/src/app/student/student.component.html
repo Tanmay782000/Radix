@@ -1,0 +1,47 @@
+
+<div>
+  id
+<input type="text" [(ngModel)]="id"><br>
+name
+<input type="text" [(ngModel)]="name"><br>
+standerd
+<input type="text" [(ngModel)]="standerd"><br>
+division
+<input type="text" [(ngModel)]="divison"><br>
+city
+<input type="text" [(ngModel)]="city"><br>
+state
+<input type="text" [(ngModel)]="state"><br>
+country
+<input type="text" [(ngModel)]="country"><br>
+contact
+<input type="text" [(ngModel)]="contact"><br>
+<button (click)="data()">submit</button>
+
+<table aria-describedby="table">   
+
+<th>ID</th>
+<th>NAME</th>
+<th>STANDERD</th>
+<th>DIVISION</th>
+<th>CITY</th>
+<th>STATE</th>
+<th>COUNTRY</th>
+<th>CONTACT</th>
+  <tr *ngFor="let item of myarr">
+    <td>{{item.id}}</td>
+    <td>{{item.name}}</td>
+    <td>{{item.standerd}}</td>
+    <td>{{item.division}}</td>
+    <td>{{item.city}}</td>
+    <td>{{item.state}}</td>
+    <td>{{item.country}}</td>
+     <td>{{item.contact}}</td>
+   <td><button [routerLink]="['/update',item.id]">click</button></td>
+</tr>
+</table>
+</div>
+<div>
+<router-outlet></router-outlet> 
+
+</div>

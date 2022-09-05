@@ -1,0 +1,32 @@
+<h1>landing page</h1>
+<label for="id">ID:</label>
+<input type="text" [(ngModel)]="id">
+<label for="name">Name</label>
+<input type="text" [(ngModel)]="name">
+<label for="collage">collage</label>
+<input type="text" [(ngModel)]="collage">
+<label for="salary">salary</label>
+<input type="text" [(ngModel)]="salary">
+<button type="button" (click)="myclick()">CLICK 1</button>
+<button type="button" (click)="yourclick()">CLICK 2</button>
+
+<table border="2" aria-describedby="table">
+  <tr>
+    <th>ID</th>
+    <th>NAME</th>
+    <th>COLLAGE</th>
+  </tr>
+  <tr *ngFor="let item of list">
+    <ng-container *ngIf="item.salary === 100000  else myblock">
+    <td style="color: red;">{{item.id}}</td>
+    <td style="color: red;">{{item.name}}</td>
+    <td style="color: red;">{{item.collage}}</td>
+    </ng-container>  
+    <ng-template #myblock>
+      <td style="color: green;">{{item.id}}</td>
+      <td style="color: green;">{{item.name}}</td>
+      <td style="color: green;">{{item.collage}}</td>
+    </ng-template>
+  </tr>
+</table>
+

@@ -1,0 +1,32 @@
+<table aria-describedby="table">
+  <tr>
+    <th>ID</th>
+    <th>NAME</th>
+    <th>EMAIL</th>
+    <th>GENDER</th>
+    <th>STATUS</th>
+  </tr>
+<tr *ngFor="let item of Array1">
+  <td>{{item.id}}</td>
+  <td>{{item.name}}</td>
+  <td>{{item.email}}</td>
+  <td>{{item.gender}}</td>
+  <td>{{item.status}}</td>
+  <td><button (click)="edit(item)">edit</button></td>
+  <td><button (click)="updatenew(item)">update</button></td>
+</tr>
+</table>
+
+<form [formGroup]="userarray">
+id
+<input type="text" formControlName="id" readonly>
+name
+<input type="text" formControlName="name">
+email
+<input type="text" formControlName="email">
+gender
+<input type="text" formControlName="gender">
+status
+<input type="text" formControlName="status">
+<button (click)="add()">click</button>
+</form>

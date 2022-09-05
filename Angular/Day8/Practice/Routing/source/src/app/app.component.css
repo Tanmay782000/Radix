@@ -1,0 +1,22 @@
+h1{
+    color:red;
+}
+nav{
+    background-color: black;
+}
+nav ul li{
+ display: inline;  
+ margin: 10px;
+ color:white;
+}
+nav ul li a{
+    color:white;
+    text-decoration: none;
+}
+nav ul li {
+    font-size: xx-large;
+}
+nav ul {
+    text-align: center;
+}
+

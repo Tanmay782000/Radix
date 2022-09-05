@@ -1,0 +1,8 @@
+var d: Date = new Date()
+d.setDate(5)
+d.setMonth(3)
+d.setFullYear(2022)
+var day = d.getDate()
+var month = d.getMonth()
+var year = d.getFullYear()
+console.log(day , month , year)

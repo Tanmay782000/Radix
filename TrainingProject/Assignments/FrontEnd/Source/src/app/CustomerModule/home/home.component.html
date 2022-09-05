@@ -1,0 +1,74 @@
+<iframe
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3506.2233913121413!2d77.4051603706222!3d28.50292593193056!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce626851f7009%3A0x621185133cfd1ad1!2sGeeksforGeeks!5e0!3m2!1sen!2sin!4v1585040658255!5m2!1sen!2sin"
+  width="1000" height="1000" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"
+  id="iframe" allowtransparency="true">
+</iframe>
+
+
+
+<div class="row" id="myrow">
+  <div class="col-sm-5">
+    <div class="container d-flex justify-content-center">
+      <div class="card mt-3 container" id="card1" style="width: 25rem; height:35rem">
+        <div class="card-title display-6"><strong>Where Can We Pick You Up?</strong></div>
+        <form class="mt-5 ml-3" [formGroup]="DistForm" (ngSubmit)="CalculateAmount()">
+
+          <select [(ngModel)]="value1" class="w-100 h-25 ml-3" formControlName="Pickup">
+            <option value="undefined" selected disabled>Add a Pickup Location</option>
+            <option *ngFor="let item of customerService.location" [value]="item.locationDetails">
+              {{item.locationAddress}},{{item.locationName}}
+            </option>
+          </select>
+
+          <br><br>
+
+          <select [(ngModel)]="value2" class="w-100 h-25" formControlName="Destination">
+            <option value="undefined" selected disabled>Enter your destination</option>
+            <option *ngFor="let item of customerService.location" [value]="item.locationDetails">
+              {{item.locationAddress}},{{item.locationName}}
+            </option>
+          </select>
+          <br><br>
+          <span class="d-flex justify-content-between align-items-center">
+            <button class="btn btn-dark mt-2" [disabled]="!DistForm.valid">Show Rides</button>
+
+            <ng-container *ngIf="count; then truee else falsee"></ng-container>
+            <ng-template #truee>
+              <h4 class="text-dark mt-2">{{result}} Kilometers</h4>
+            </ng-template>
+            <ng-template #falsee>
+             <small class="text-danger mt-2">{{error}}</small>
+            </ng-template>
+          </span>
+
+          <div class="card-header mt-2">
+            <span>
+              <b>Allow Location Access</b><br>
+              <small>For Perfect Pickup Experience</small>
+            </span>
+          </div>
+          <div class="card-header">
+            <span>
+              <b>Set Location On Map</b><br>
+            </span>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- <div class="row">
+      <div class="container d-flex justify-content-center">
+        <ng-container *ngIf="count; then truee; else falseee"></ng-container>
+        <ng-template #truee>
+          <h4 class="text-danger">{{result}} kms.</h4>
+        </ng-template>
+        <ng-template #falseee>
+          <h4 class="text-small"></h4>
+        </ng-template>
+      </div>
+    </div> -->
+  </div>
+
+  <div class="col-sm-6">
+    <router-outlet></router-outlet>
+  </div>
+</div>

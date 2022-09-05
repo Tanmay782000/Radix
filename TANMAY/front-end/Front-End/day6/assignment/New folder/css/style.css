@@ -1,0 +1,20 @@
+table.center{
+    margin-right: auto;
+    margin-left: auto;
+  }
+  table{
+    border-style: solid;
+    border-color: black;
+    width:800px;
+  }
+  hr{
+    width:800px;
+    margin-left: 50px;
+    margin-right: auto;
+  }
+  .color1,.color2,.color3 td{
+    background-color: royalblue;
+  }
+  .color4 th{
+    background-color: royalblue;
+  }

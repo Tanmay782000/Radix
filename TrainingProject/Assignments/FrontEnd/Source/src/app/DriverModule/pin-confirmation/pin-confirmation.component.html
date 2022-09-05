@@ -1,0 +1,13 @@
+<div class="card w-25 p-3 mx-auto mt-4">
+    <div class="card-header bg-white">
+      <h3 class="text-dark text-center">Enter the pin Number</h3>
+    </div>
+    <div>
+      <form [formGroup]="FormData" class="w-50 mx-auto  mt-3" (ngSubmit)="submitdata()">
+        <input type="text" class="form-control" placeholder="Enter Mobile Number" formControlName="pin">
+        <small>{{error}}</small>
+        <button class="btn btn-success mt-3 w-100 text-center bg-dark" [disabled]="!FormData.valid">Submit</button>
+         
+      </form>
+    </div>
+  </div>

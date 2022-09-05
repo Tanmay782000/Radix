@@ -1,0 +1,29 @@
+<form [formGroup]="myForm" (ngSubmit)="submitdata()">
+    <div class="form-group">
+    <label for="orderid">OrderId:</label>
+    <input type="number" class="form-control" formControlName = "OrderId">
+    </div>
+    
+    <div class="form-group">
+    <label for="Name">Name:</label>
+    <input type="text" class="form-control" formControlName = "Name">
+    </div>
+    
+    <div class="form-group">
+    <label for="FeedBackInfo">FeedBackInfo:</label>
+    <select class="form-control"  type="text" formControlName = "FeedBackInfo" >
+      <option [value]=node.poor>{{node.poor}}</option>
+      <option [value]="node.good">{{node.good}}</option>
+      <option [value]="node.average">{{node.average}}</option>
+    </select>  
+    </div>
+    
+    <div class="form-group">
+    <label for="FeedBackDetails">FeedBackDetails:</label>
+    <textarea class="form-control" formControlName = "FeedBackDetails" cols="30" rows="5">
+    </textarea>
+    </div>
+    
+    <button class="btn btn-success mt-1">Submit</button>
+    </form>
+    

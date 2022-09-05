@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.js"></script>
+</head>
+<body>
+    <select id="dropdown">
+        <option selected>please select</option>
+    </select>
+<p id="pi"></p>
+    <script>
+    $(document).ready(function(){
+    var c = $("#dropdown").append("<option>India</option><option>Russia</option><option>Us</option><option>UK</option><option>Srilanka</option>");   
+        $("#dropdown").change(function(){     
+        var d = $("#dropdown").val()
+        $("p").text("you selected:"+d)   
+});
+$("#dropdown").change(function(){ 
+if($("#dropdown").val() == "please select")
+        {
+        $("option").each(function( index ) {
+            var start = index + 1
+        var m =  start + ": " + $( this ).text() ;
+        $("p").append(this.value + '<br>' + ' ' + '<br>');
+        });
+        }
+       });
+    });
+</script>
+</body>
+</html>

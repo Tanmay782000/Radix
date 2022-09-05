@@ -1,0 +1,74 @@
+  .carousel-inner img {
+    width: 1600px;
+    height: 400px;
+  }
+  .carousel-indicators li {
+    box-sizing: content-box;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+    width: 30px;
+    height: 3px;
+    margin-right: 3px;
+    margin-left: 3px;
+    text-indent: -999px;
+    cursor: pointer;
+    background-color: #fff;
+    background-clip: padding-box;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    opacity: .5;
+    transition: opacity .6s ease;
+}
+.thumbnail img{
+    width:100%;
+}
+@media(max-width:400px){
+  .carousel-inner img{
+    width:100%;
+  }
+}
+#bg1{
+  background-image:url('photos/3.jfif');
+  height:max-content;
+  width:100%;
+}
+#bg2{
+  background-image:url('photos/2.jfif');
+  height:max-content;
+  width:100%;
+}
+#pro img{
+    margin-top:-20px;
+    height:350px;
+}
+#aboutid{
+    margin-top:-20px;
+    background-image:url('photos/aboutus.jpg');
+}
+@media(max-width:500px){
+    #pro img{
+        margin-top: 0px;
+        align-items: center;
+    }
+    #aboutid{
+      width:100%;
+    }
+}
+
+#serviceid{
+  background-image:url('photos/aboutus.jpg');
+    margin-top:-20px;
+}
+@media(max-width:500px){
+    #pro img{
+        margin-top: 0px;
+    }
+}
+#blogid
+{
+  background-image:url('photos/aboutus.jpg');
+ }
+#contactid
+{
+background-image:url('photos/aboutus.jpg');
+}

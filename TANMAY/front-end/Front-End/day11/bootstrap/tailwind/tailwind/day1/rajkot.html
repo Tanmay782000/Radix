@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="dist/output.css">
+    </head>
+<body>
+
+  <nav class="px-5 bg-black p-5 text-white border-gray-200 sticky top-0 dark:bg-gray-800 dark:border-gray-700">
+    <div class="container flex flex-wrap justify-between items-center mx-auto">
+      <a href="#" class="flex items-center">
+          <img src="guj.png" class="mr-5 h-8 sm:h-10" alt="Flowbite Logo" />
+           <span class="text-white tracking-tight font-extrabold text-4xl">Gujarat Tourism</span>
+      </a>
+      <button data-collapse-toggle="mobile-menu" type="button" class="inline-flex justify-center items-center ml-3 text-gray-400 rounded-lg md:hidden hover:text-gray-900" aria-controls="mobile-menu-2" aria-expanded="false">
+        <span class="sr-only">Open main menu</span>
+        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
+        <svg class="hidden w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+      </button>
+      <div class="hidden w-full md:block md:w-auto" id="mobile-menu">
+        <ul class="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
+          <li>
+            <a href="index.html" class="text-red-500 hover:text-red-800 700 block py-2 pr-4 pl-3 active" aria-current="page">Home</a>
+          </li>
+          <li>
+              <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar" class="block py-2 pr-4 font-bold pl-3 text-white">Locations</button>
+              <div id="dropdownNavbar" class="hidden z-10 w-44 text-base list-none bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600">
+                  <ul class="py-1" aria-labelledby="dropdownLargeButton">
+                    <li>
+                      <a href="vadodara-main.html" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-white ">Vadodara</a>
+                    </li>
+                    <li>
+                      <a href="surat.html" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-white dark:hover:text-red-700">Surat</a>
+                    </li>
+                    <li>
+                      <a href="ahmedabad.html" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-white dark:hover:text-red-700">Ahmedabad</a>
+                    </li>
+                   <li>
+                    <a href="#" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-white dark:hover:text-red-700">Rajkot</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="grid grid-cols-4">                                              
+    <div class="shadow-lg mt-0 sm:mt-0 bg-green-900 h-0 sm:h-700 text-green-500 sticky left-0 text-lg font-bold text-center p-0 sm:p-10 col-span-1 sm:visible invisible">
+        <div id="accordion-color" data-accordion="collapse" data-active-classes="bg-blue-100 dark:bg-gray-800 text-blue-600 dark:text-white">
+            <h2 id="accordion-color-heading-1">
+              <button type="button" class="flex justify-between items-center p-5 w-full font-medium text-left text-red-900 bg-black rounded-t-xl border border-b-0 border-gray-200 focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-800 dark:border-gray-700 dark:text-white dark:bg-gray-800 hover:bg-blue-100 dark:hover:bg-gray-800" data-accordion-target="#accordion-color-body-1" aria-expanded="true" aria-controls="accordion-color-body-1">
+                <span class="underline font-extrabold">History</span>
+                <svg data-accordion-icon class="w-6 h-6 rotate-180 shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+              </button>
+            </h2>
+            <div id="accordion-color-body-1" aria-labelledby="accordion-color-heading-1">
+              <div class="p-5 border border-b-0 border-gray-200 dark:border-gray-700 dark:bg-gray-900">
+                <ul class="list-disc">
+                <li class="flex justify-center"><p class="mb-2 text-md text-blue-600 underline"><a href="#foundedin">Founded In?</a></p></li>
+                </ul>
+              </div>
+            </div>
+            <h2 id="accordion-color-heading-2">
+              <button type="button" class="flex justify-between items-center p-5 w-full font-medium text-left text-red-900 bg-black border border-b-0 border-gray-200 focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-800 dark:border-gray-700 dark:text-gray-400 hover:bg-blue-100 dark:hover:bg-gray-800" data-accordion-target="#accordion-color-body-2" aria-expanded="false" aria-controls="accordion-color-body-2">
+                <span class="font-extrabold"><a href="#heritagehist">Place to visit</a></span>
+                <svg data-accordion-icon class="w-6 h-6 shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+              </button>
+            </h2>
+            <div id="accordion-color-body-2" class="hidden" aria-labelledby="accordion-color-heading-2">
+              <div class="p-5 border border-b-0 border-gray-200 dark:border-gray-700">
+                <ul class="list-disc">
+                <li class="flex justify-center"><p class="mb-2 text-md text-blue-600 underline"><a href="#heritageplc">Heritage</a></p></li>
+                <li class="flex justify-center"><p class="mb-2 text-md text-blue-600 underline"><a href="#funplaces">Fun places</a></p></li>
+                </ul>
+              </div>
+            </div>
+            <h2 id="accordion-color-heading-3">
+              <button type="button" class="flex justify-between items-center p-5 w-full font-medium bg-black text-left text-red-900 border border-gray-200 focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-800 dark:border-gray-700 dark:text-gray-400 hover:bg-blue-100 dark:hover:bg-gray-800" data-accordion-target="#accordion-color-body-3" aria-expanded="false" aria-controls="accordion-color-body-3">
+                <span class="font-extrabold">Private Transpot agencies</span>
+                <svg data-accordion-icon class="w-6 h-6 shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+              </button>
+            </h2>
+            <div id="accordion-color-body-3" class="hidden" aria-labelledby="accordion-color-heading-3">
+              <div class="p-5 border border-t-0 border-gray-200 dark:border-gray-700">
+                <ul class="list-disc">
+                  <li class="flex justify-center"><p class="mb-2 text-blue-600 underline text-md"><a href="#topagency">Top agencies in vadodara</a></p></li>
+                </ul>
+              </div>
+            </div>
+            <h2 id="accordion-color-heading-4">
+              <button type="button" class="flex justify-between items-center bg-black p-5 w-full font-medium text-left text-red-900 border border-gray-200 focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-800 dark:border-gray-700 dark:text-gray-400 hover:bg-blue-100 dark:hover:bg-gray-800" data-accordion-target="#accordion-color-body-4" aria-expanded="false" aria-controls="accordion-color-body-4">
+                <span class="font-extrabold">Food</span>
+                <svg data-accordion-icon class="w-6 h-6 shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+              </button>
+            </h2>
+            <div id="accordion-color-body-4" class="hidden" aria-labelledby="accordion-color-heading-4">
+              <div class="p-5 border border-t-0 border-gray-200 dark:border-gray-700">
+                <ul class="list-disc">
+                  <li class="flex justify-center"><p class="mb-2 text-blue-600 underline text-md"><a href="#food">Famous food in vadodara</a></p></li>
+         
+                </ul>
+              </div>
+            </div>
+          </div>
+    </div>
+
+    <div class="shadow-lg m-0 mt-0 sm:mt-0 bg-green-100 h-screen sm:h-700 text-green-500 text-lg font-bold p-0 sm:p-10 overflow-auto col-span-4 sm:col-span-3">
+           <div class="text-black mb-16">
+            <div class="container mx-auto">
+               <span class="text-5xl" id="foundedin">Rajkot in all around</span>
+               <div class="leading-7">
+                            <p class="mt-5"><img src="photos/rajkot.jpg" class="float-right h-48 border-double border-4 border-red-900" alt="baroda">The city in one period[when?] was called Chandanavati after[vague] the rule of Chanda of the Dodiya Rajputs. The capital was also known[when?] as Virakshetra or Viravati (Land of Warriors). Later on,[when?] it was known as Vadpatraka or Vadodará,[vague] and according to tradition,[whose?][when?] is a corrupt form of the Sanskrit word vatodar, meaning "in the belly of the Banyan tree". It is, as of 2000, almost impossible to ascertain when the various changes in the name were made; early English travellers and merchants of the 18th century mention the town as Baroda,[8] and it is from this, that the name Baroda is derived; in 1974 (well after independence) the official name of the city was changed to Vadodara The early trade settlers made an entry in 812 A.D.. The imperial Baroda province was mainly ruled by Hindu Kings till the year 1297. Chalukya Dynasty took over the Gupta Empire by fierce battle after intense rivalry. After then, it was taken over by Solanki Rajputs. Tehn, Muslim rule was spread across India and reins of Power were then snatched by Sultans of Delhi. The city was ruled for a long time by these Sultans, until they were easily overthrown by the Mughal emperors. During this time, Maratha Gaekwads made an entry into this region  and began  their reputable reign. They made Vadodara as their capital.
+
+                                The Glorious History of the Gaekwad’s began when Maratha General Pilaji Rao Gaekwad conquered Songadh from the Mughals in year 1726. The Mughal rule came to an End in Year 1732, when Maratha General Pilaji Rao Gekwad intensified the Maratha campaigns in South Gujarat and carved out a Kingdom for his lineage. Son & Succesor of Pilaji Rao Gekwad – Damajirao, defeated the Mughal Armies and conquered Baroda State in Year 1734. Slowly, the Gekwad successors intensified the degree of their hold over more areas of Gujarat, which made them most Powerful Rulers in the region. The Geakwad’s ruled the Kingdom until Indian Independence in Year 1947.
+                                In Year 1875, during the enigmatic rule of Maharaja Sayajirao III, it was considered as the Golden Period, as it was an Era of great progress and achievements in all fields. Maharaja Sayajirao Ruled from year 1875 to 1939, and  contributed overwhelmingly to revive and reform Vadodara (Baroda) with some best initiatives like
+                                
+                                In Year 1875, during the enigmatic rule of Maharaja Sayajirao III, it was considered as the Golden Period, as it was an Era of great progress and achievements in all fields. Maharaja Sayajirao Ruled from year 1875 to 1939, and  contributed overwhelmingly to revive and reform Vadodara (Baroda) with some best initiatives like…</p>                                                 
+                        </div>
+          </div>
+        </div>
+       
+        <div class="mt-1000 ">
+        <span class="text-5xl text-center tracking-tight text-black" id="heritagehist">Places to visit</span>
+          <div class="container">
+               <h1 class="text-3xl text-black mt-5">1.Ajvanimeta Garden</h1>
+               <p class="leading-7 text-black">The Ajwa Nimeta Dam gets its name from Ajwa- the Lake and Nimeta- the Power Plant operating on the dam. The dam is built on the Vishwamitri River and fulfils the water requirements of the city people. The dam was constructed in the 20th century is about 5 km long. The Gardens of Ajwa Nimeta are a local attraction because of the colourful dancing fountains that are all along on the central line of the garden. The place also has a fun park and is hit amongst the locals.</p>
+               <h1 class="text-3xl text-black mt-5">2.Laxmi Vilas Palace</h1>
+               <p class="leading-7 text-black">The royal home of the Gaekwads, Laxmi Vilas Palace is the largest private abode built till now. The size of the palace is about four times of the Buckingham Palace and has all the modern amenities. This architectural marvel dwells on both the Eastern and Western type of architecture. With the exteriors show casing the Indian touch the plush interiors match the European luxuries. One can admire the art and the architecture of the palace. With a lush golf course and with the ornate durbar halls, the palace speaks the splendid history.</p>
+               <h1 class="text-3xl text-black mt-5">3. EME Temple</h1>
+               <p class="leading-7 text-black">The EME Temple or also known as the Dakshinamurthi Temple is built by the Electrical and Mechanical Engineering Corps. The temple is one of its kinds as it depicts five main religions of India. The temple has army style architecture and is a pleasant sight. Lord Dakhshinamurthi is worshipped in the temple. The Kalash signifies the Hindu religion, the dome stands for Islam, The tower represents Christianity, the golden structure over the tower stands for Buddhism and the entrance of the temple stands for the Jainism. Since the idol is facing the south hence the name Dakhshinamurthi.</p>
+               <h1 class="text-3xl text-black mt-5">4. Nazarbaug Palace</h1>
+               <p class="leading-7 text-black">One of the oldest monuments of Vadodara, Nazarbaug Palace was the royal abode of the Gaekwad’s clan. The palace was built in the early 18th Century and was a three storey monument. The overall value of the property was in billions and after an alleged robbery the palace now remains in the ruins. The glory of the original abode is lost but even the ruins transport you to a time back in history.              </p>
+               <h1 class="text-3xl text-black mt-5">5. Kirti Stambh</h1>
+               <p class="leading-7 text-black">Built in 1935, Kirti Stambh or the tower of fame was constructed by Maharaja Sayajirao Gaekwad III. The Kirti Stambh is one of the highest towers of the city and stands tall as a sign of victory. The Tower has a lion on the top that is faming eastwards and its back is towards the famous Laxmi Vilas Palace. As per Hindu Mythology it is said that the movement eastwards is for salvation, hence the lion faces east. </p>
+               <h1 class="text-3xl text-black mt-5">6. Sayaji Bau</h1>
+               <p class="leading-7 text-black">Sayaji baug built on the River Vishwamitri has 45 hectare garden and has an aquarium along with two museums. The garden is the largest in west India and houses close to 100 species of flowering plants. The beautiful garden has three entrance gates. The Baroda Museum and Picture Gallery are built in the garden along with the Sayaji Zoo and Sardar Patel Planetarium. The major attraction of the garden is the floral clock.</p>
+          </div>
+          </div>
+
+          <div class="mt-1000" id="heritageplc"><h1 class="text-5xl text-black text-center">Heritage places</h1>
+          <div class="grid grid-cols-3 my-5">
+              <div class="col-span-1 ml-2">
+               <div class="max-w-sm rounded overflow-hidden shadow-lg">
+                 <img class="w-full h-200" src="photos/lv.jpg" alt="Sunset in the mountains">
+                 <div class="px-6 py-4">
+                   <div class="font-bold text-xl mb-2">The Lakshmi vilas palace</div>
+                   <p class="text-gray-700 text-lg">
+                    . One can admire the art and the architecture of the palace. With a lush golf course and with the ornate durbar halls, the palace speaks the splendid history.                   </p>
+                 </div>
+            
+               </div>
+              </div>
+               
+
+             <div class="col-sm-1 ml-2">
+              <div class="max-w-sm rounded overflow-hidden shadow-lg">
+                <img class="w-full h-200" src="photos/bm.jfif" alt="Sunset in the mountains" >
+                <div class="px-6 py-4">
+                  <div class="font-bold text-xl mb-2">Baroda museum</div>
+                  <p class="text-gray-700 text-lg">
+                    The Baroda Museum & Picture Gallery in Vadodara was built in 1894 on the lines of the Victoria & Albert Museum and the Science Museum of London.                  </p>
+                </div>
+              </div> 
+            </div>
+            
+              <div class="col-sm-1 ml-2">
+                <div class="max-w-sm rounded overflow-hidden shadow-lg">
+                  <img class="w-full h-200" src="photos/km.jfif" alt="Sunset in the mountains">
+                  <div class="px-6 py-4">
+                    <div class="font-bold text-xl mb-2">Kirti Mandir</div>
+                    <p class="text-gray-700 text-lg">
+                      Kirti Mandir was built by Maharaja Sayajirao Gaekwad III of the Gaekwad dynasty of the Marathas to perpetuate the glorious memory.</p>
+                  </div>
+                </div> 
+              </div>
+              <div class="col-sm-1 mt-4 ml-2">
+                <div class="max-w-sm rounded overflow-hidden shadow-lg">
+                  <img class="w-full h-200" src="photos/makarp.jpg" alt="Sunset in the mountains">
+                  <div class="px-6 py-4">
+                    <div class="font-bold text-xl mb-2">Makarpura Palace</div>
+                    <p class="text-gray-700 text-lg">
+                      Makarpura Palace was a royal palace of Gaekwads of the Baroda State, in present-day Vadodara, Gujarat, India.                    </p>
+                  </div>
+                </div> 
+              </div>
+              <div class="col-sm-1 mt-4 ml-2">
+                <div class="max-w-sm rounded overflow-hidden shadow-lg">
+                  <img class="w-full h-200" src="photos/sh.jpg" alt="Sunset in the mountains">
+                  <div class="px-6 py-4">
+                    <div class="font-bold text-xl mb-2">Sayaji Baug Health Museum</div>
+                    <p class="text-gray-700 text-lg">
+                     Sayaji baug health museum was built by Maharaja Sayajirao Gaekwad III of the Gaekwad dynasty of the Marathas.
+                    </p>
+                  </div>
+                </div> 
+              </div>
+              <div class="col-sm-1 mt-4 ml-2">
+                <div class="max-w-sm rounded overflow-hidden shadow-lg">
+                  <img class="w-full h-200" src="photos/ms.jfif" alt="Sunset in the mountains">
+                  <div class="px-6 py-4">
+                    <div class="font-bold text-xl mb-2">Meer Nawab Shah Tomb
+                    </div>
+                    <p class="text-gray-700 text-lg">
+                      The mausoleum known as Hazira at Vadodara, Gujarat, India; contains tombs of Qutb-ud-din.of Qutb-ud-din Muhammad .   </p>
+                  </div>
+                </div> 
+              </div>
+              </div>  
+            </div>
+
+            <div class="mt-1000" id="funplaces"><h1 class="text-5xl text-black text-center">Fun places</h1>
+              <div class="grid grid-cols-3 my-5">
+                  <div class="col-span-1 ml-2">
+                   <div class="max-w-sm rounded overflow-hidden shadow-lg">
+                     <img class="w-full h-200" src="photos/funworld.jpg" alt="Sunset in the mountains">
+                     <div class="px-6 py-4">
+                       <div class="font-bold text-xl mb-2">Gujarat funworld</div>
+                       <p class="text-gray-700 text-lg">
+                        Gujarat Amusement And Funworld Pvt Ltd in Ajwa Road, Vadodara is a top player in the category Water Parks in the Vadodara. 
+                       </p>
+                     </div>
+                
+                   </div>
+                  </div>
+                   
+    
+                 <div class="col-sm-1 ml-2">
+                  <div class="max-w-sm rounded overflow-hidden shadow-lg">
+                    <img class="w-full h-200" src="photos/sayajibugh.jfif" alt="Sunset in the mountains" >
+                    <div class="px-6 py-4">
+                      <div class="font-bold text-xl mb-2">Sayaji Baug</div>
+                      <p class="text-gray-700 text-lg">
+                        Sayaji Baug, also known as Kamati Baug, is a massive green square in the middle of the town, which houses the famous Museum and Picture Gallery.
+                       </p>
+                    </div>
+                  </div> 
+                </div>
+                
+                  <div class="col-sm-1 ml-2">
+                    <div class="max-w-sm rounded overflow-hidden shadow-lg">
+                      <img class="w-full h-200" src="photos/hathnimata.jfif" alt="Sunset in the mountains">
+                      <div class="px-6 py-4">
+                        <div class="font-bold text-xl mb-2">Hathni mata waterfall</div>
+                        <p class="text-gray-700 text-lg">
+                          this place is more beautiful during rainy season. it is near by from zand hanuman , so you can combine both trip. you can have bath in waterfall. enjoy.
+                        </p>
+                        </div>
+                    </div> 
+                  </div>
+                  <div class="col-sm-1 mt-4 ml-2">
+                    <div class="max-w-sm rounded overflow-hidden shadow-lg">
+                      <img class="w-full h-200" src="photos/bird.jpg" alt="Sunset in the mountains">
+                      <div class="px-6 py-4">
+                        <div class="font-bold text-xl mb-2">Bird sayaji park</div>
+                        <p class="text-gray-700 text-lg">
+                          Bird Park Sayaji Garden reviews ... Spread across a land of 45 hectares, this garden is named after the great Maharaja Sayajirao Gaekwad III.        
+                        </p> </div>
+                    </div> 
+                  </div>
+                  <div class="col-sm-1 mt-4 ml-2">
+                    <div class="max-w-sm rounded overflow-hidden shadow-lg">
+                      <img class="w-full h-200" src="photos/sursagar.jfif" alt="Sunset in the mountains">
+                      <div class="px-6 py-4">
+                        <div class="font-bold text-xl mb-2">sursagar Lake</div>
+                        <p class="text-gray-700 text-lg">
+                          Sursagar Lake also known as the Chand Talao is a lake situated in middle of the city of Vadodara It was way back in 1875  in the State of Gujarat in India.                        </p>
+                      </div>
+                    </div> 
+                  </div>
+                  <div class="col-sm-1 mt-4 ml-2">
+                    <div class="max-w-sm rounded overflow-hidden shadow-lg">
+                      <img class="w-full h-200" src="photos/zoo.jpg" alt="Sunset in the mountains">
+                      <div class="px-6 py-4">
+                        <div class="font-bold text-xl mb-2">Zoo ticket office
+                        </div>
+                        <p class="text-gray-700 text-lg">
+                          The Inspiration of a Zoo in Baroda came from H. H. Maharaja Sayajirao Gaekwad III – a Great Visionary Ruler of Baroda            
+                     </p> </div>
+                    </div> 
+                  </div>
+                  </div>  
+                </div>
+
+
+<div class="mt-1000" id="topagency">
+  <div class="grid grid-cols-3">
+    <div class="col-span-3">
+   <span class="text-5xl text-center text-black">Top Private transportation in Vadodara</span>
+   <div class="max-w-sm w-full lg:max-w-full mt-4 lg:flex">
+    <div class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden" style="background-image: url('photos/prp.jfif')" title="Woman holding a mug">
+    </div>
+    <div class="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
+      <div class="mb-8">
+        <p class="text-sm text-gray-600 flex items-center">
+          Members only
+        </p>
+        <div class="text-gray-900 font-bold text-xl mb-2">Shree Pradip tourism.</div>
+        <p class="text-gray-700 text-base">We are the best intercity transportation and tourist guide.</p>
+        <p class="text-sm text-red-400 mt-5"><span class="text-black">ADDRESS:</span>Rachana House, Rajmahal Road, Vadodara - 390001, Opp Sayaji Vihar Club</p>
+        <p class="text-sm text-red-400 mt-5"><span class="text-black">CONTACT:</span>07947463986</p>
+
+      </div></div>
+    
+    </div></div>
+</div>
+</div>
+
+
+
+
+
+  <div class="grid grid-cols-3">
+    <div class="col-span-3">
+   <div class="max-w-sm w-full lg:max-w-full mt-4 lg:flex">
+    <div class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden" style="background-image: url('photos/shah.jfif')" title="Woman holding a mug">
+    </div>
+    <div class="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
+      <div class="mb-8">
+        <p class="text-sm text-gray-600 flex items-center">
+          4.5 Rantings
+        </p>
+        <div class="text-gray-900 font-bold text-xl mb-2">Shah Travells.</div>
+        <p class="text-gray-700 text-base">We are the best intercity transportation and tourist guide.</p>
+        <p class="text-sm text-red-400 mt-5"><span class="text-black">ADDRESS:</span>Rachana House, Rajmahal Road, Vadodara - 390001, Opp Sayaji Vihar Club</p>
+        <p class="text-sm text-red-400 mt-5"><span class="text-black">CONTACT:</span>07947463986</p>
+
+      </div></div>
+    
+    </div></div>
+</div>
+
+
+
+
+
+<div class="grid grid-cols-3">
+  <div class="col-span-3">
+ <div class="max-w-sm w-full lg:max-w-full mt-4 lg:flex">
+  <div class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden" style="background-image: url('photos/rudra.jfif')" title="Woman holding a mug">
+  </div>
+  <div class="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
+    <div class="mb-8">
+      <p class="text-sm text-gray-600 flex items-center">
+        4.3 Ratings
+      </p>
+      <div class="text-gray-900 font-bold text-xl mb-2">Rudra tours & travells .</div>
+      <p class="text-gray-700 text-base">We are the best intercity transportation and tourist guide.</p>
+      <p class="text-sm text-red-400 mt-5"><span class="text-black">ADDRESS:</span>Morden House, Rajmahal Road, Vadodara - 390001, Opp Sayaji Vihar Club</p>
+      <p class="text-sm text-red-400 mt-5"><span class="text-black">CONTACT:</span>045565656332</p>
+
+    </div></div>
+  
+  </div></div>
+</div>
+
+
+
+
+
+<div class="grid grid-cols-3">
+  <div class="col-span-3">
+ <div class="max-w-sm w-full lg:max-w-full mt-4 lg:flex">
+  <div class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden" style="background-image: url('photos/srinath.jfif')" title="Woman holding a mug">
+  </div>
+  <div class="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
+    <div class="mb-8">
+      <p class="text-sm text-gray-600 flex items-center">
+        Members only
+      </p>
+      <div class="text-gray-900 font-bold text-xl mb-2">Shreenath travells.</div>
+      <p class="text-gray-700 text-base">We are the best intercity transportation and tourist guide.</p>
+      <p class="text-sm text-red-400 mt-5"><span class="text-black">ADDRESS:</span>Rachana House, Rajmahal Road, Vadodara - 390001, Opp Sayaji Vihar Club</p>
+      <p class="text-sm text-red-400 mt-5"><span class="text-black">CONTACT:</span>07947463986</p>
+
+    </div></div>
+  
+  </div></div>
+</div>
+<div class="mt-1000">
+  <h1 class="text-5xl text-black text-center" id="food">Food</h1>
+  <div class="grid grid-cols-3 my-5">
+    <div class="col-span-1 ml-2">
+     <div class="max-w-sm rounded overflow-hidden shadow-lg">
+       <img class="w-full h-200" src="photos/sevsal.jpeg" alt="Sunset in the mountains">
+       <div class="px-6 py-4">
+         <div class="font-bold text-xl mb-2">Sev-usad<span class="text-xl font-bold text-red-700 tracking-wide">(Mahakali)</span></div>
+         <p class="text-gray-700 text-lg">
+          Nehru Bhawan, GF-14/15 Prathmesh Plaza, Palace Rd, Kirti Stambh, Behind, Vadodara, Gujarat 390001
+        </p>
+       </div>
+     </div>
+    </div>
+     
+
+   <div class="col-sm-1 ml-2">
+    <div class="max-w-sm rounded overflow-hidden shadow-lg">
+      <img class="w-full h-200" src="photos/khaman.jpeg" alt="Sunset in the mountains" >
+      <div class="px-6 py-4">
+        <div class="font-bold text-xl mb-2">Khaman dhokla<span class="text-xl font-bold text-red-700 tracking-wide">(Balubhai)</span></div>
+        <p class="text-gray-700 text-lg">
+          Nehru Bhawan, GF-14/15 Prathmesh Plaza, Palace Rd, Kirti Stambh, Behind, Vadodara, Gujarat 390001
+        </p>
+      </div>
+    </div> 
+  </div>
+  
+    <div class="col-sm-1 ml-2">
+      <div class="max-w-sm rounded overflow-hidden shadow-lg">
+        <img class="w-full h-200" src="photos/dabeli.jpeg" alt="Sunset in the mountains">
+        <div class="px-6 py-4">
+          <div class="font-bold text-xl mb-2">Dabeli<span class="text-xl font-bold text-red-700 tracking-wide">(Saideep)</span></div>
+          <p class="text-gray-700 text-lg">
+            Nehru Bhawan, GF-14/15 Prathmesh Plaza, Palace Rd, Kirti Stambh, Behind, Vadodara, Gujarat 390001
+          </p>
+          </div>
+      </div> 
+    </div>
+    <div class="col-sm-1 mt-4 ml-2">
+      <div class="max-w-sm rounded overflow-hidden shadow-lg">
+        <img class="w-full h-200" src="photos/fafda.jpeg" alt="Sunset in the mountains">
+        <div class="px-6 py-4">
+          <div class="font-bold text-xl mb-2">Jalebi fafda<span class="text-xl font-bold text-red-700 tracking-wide">(Bumiya dairy)</span></div>
+          <p class="text-gray-700 text-lg">
+            Nehru Bhawan, GF-14/15 Prathmesh Plaza, Palace Rd, Kirti Stambh, Behind, Vadodara, Gujarat 390001
+          </p> </div>
+      </div> 
+    </div>
+    <div class="col-sm-1 mt-4 ml-2">
+      <div class="max-w-sm rounded overflow-hidden shadow-lg">
+        <img class="w-full h-200" src="photos/farsan.jpeg" alt="Sunset in the mountains">
+        <div class="px-6 py-4">
+          <div class="font-bold text-xl mb-2">farsan<span class="text-xl font-bold text-red-700 tracking-wide">(Jagdish)</span></div>
+          <p class="text-gray-700 text-lg">
+            Nehru Bhawan, GF-14/15 Prathmesh Plaza, Palace Rd, Kirti Stambh, Behind, Vadodara, Gujarat 390001
+            </p>
+          </div>
+      </div> 
+    </div>
+    <div class="col-sm-1 mt-4 ml-2">
+      <div class="max-w-sm rounded overflow-hidden shadow-lg">
+        <img class="w-full h-200" src="photos/pav bhaji.jpeg" alt="Sunset in the mountains">
+        <div class="px-6 py-4">
+          <div class="font-bold text-xl mb-2">Pavbhaji<span class="text-xl font-bold text-red-700 tracking-wide">(Nylon)</span>
+          </div>
+          <p class="text-gray-700 text-lg">
+            Nehru Bhawan, GF-14/15 Prathmesh Plaza, Palace Rd, Kirti Stambh, Behind, Vadodara, Gujarat 390001
+          </p> </div>
+      </div> 
+    </div>
+    </div>  
+
+</div>
+</div>
+</div>
+
+<script src="https://unpkg.com/flowbite@1.3.4/dist/flowbite.js"></script>
+
+</body>
+</html>

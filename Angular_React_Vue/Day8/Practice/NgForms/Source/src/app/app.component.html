@@ -1,0 +1,39 @@
+<form action="" [formGroup] = "myForm" (ngSubmit)="show()">
+<label for="username">Username</label>
+<input type="text" formControlName = "username">
+<label for="password">Password</label>
+<input type="text" formControlName = "password">
+<div formArrayName="gender">
+<div *ngFor="let dm of gethobbies.controls;let i=index">
+  <input type="checkbox" formControlName="i">
+</div>
+</div><br><br>
+<div formGroupName="address">
+  <label for="houseno">house_no</label>
+  <input type="number" formControlName="house_no"><br><br>
+  <label for="houseno">soc_name</label>
+  <input type="text" formControlName="soc_name"><br><br>
+  <label for="houseno">landmark</label>
+  <input type="text" formControlName="landmark"><br><br>
+</div>
+<button>submit</button>
+<button (click)="setdata()">set data</button>
+<button (click)="patchdata()">patch data</button>
+<hr>
+<table aria-describedby="table">
+  <tr>
+    <th>username</th> 
+    <th>password</th>
+    <th>HouseNo</th>
+    <th>Soc Name</th> 
+    <th>Landmark</th>
+  </tr>
+   <tr *ngFor="let val of newarr">
+    <td>{{val.username}}</td>
+    <td>{{val.password}}</td>
+    <td>{{val.address.house_no}}</td> 
+    <td>{{val.address.soc_name}}</td>
+    <td>{{val.address.landmark}}</td> 
+   </tr>
+</table>
+</form>

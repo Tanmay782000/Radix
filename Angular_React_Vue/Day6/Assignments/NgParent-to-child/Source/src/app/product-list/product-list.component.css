@@ -1,0 +1,6 @@
+table tr,td{
+    border:2px solid black;
+}
+ul li{
+    list-style-type: none;
+}

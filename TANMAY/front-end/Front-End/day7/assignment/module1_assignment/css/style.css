@@ -1,0 +1,15 @@
+table.center{
+    margin-right: auto;
+    margin-left: auto;
+  }
+  table{
+    border-style: solid;
+    border-color: black;
+    width:800px;
+  }
+  hr{
+    width:800px;
+  }
+  .color1,.color2,.color3,.color4{
+    background-color: royalblue;
+  }

@@ -1,0 +1,4 @@
+{
+    "title":"There is a retail shop which need to manage the inventory, whenever some purchase is being made product quantity should be reduced, if quanity is less than 5 reorder request should be raised.",
+    "siteUrl":"https://stackblitz.com/edit/typescript-adnjqu?file=day2/Assignment.ts"
+}

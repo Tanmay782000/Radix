@@ -1,0 +1,1 @@
+module.exports={key:"radix",algorithm:"HS256",expiresin:"1d"}

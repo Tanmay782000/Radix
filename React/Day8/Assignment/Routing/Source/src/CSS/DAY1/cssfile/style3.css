@@ -1,0 +1,11 @@
+#mainOL ul{
+    font-style: italic;
+    font-size:xx-large;
+} 
+#mainOL ul li ol{
+    display: flex;
+    font-size:medium;
+}
+#mainOL ul li ol li{
+    margin-right: 50px;
+}

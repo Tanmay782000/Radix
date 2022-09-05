@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
+  <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+<style>
+   .main-bar{
+   height:680px; 
+   overflow:auto;
+  }
+  .left-bar{
+    height:680px; 
+  }
+  @media(max-width:900px){
+    .col-sm-3{
+      width:100%;
+      height:max-content!important;
+    }
+  }
+ 
+      .my{text-align:center;}
+    </style>
+
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item active">
+          <a class="nav-link text-danger" href="#" active>HTML<span class="sr-only"></span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="http://localhost:3000/day7/assignment/module2_assignment/assg2.html" >CSS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">BOOTSTRAP</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">TAILWIND CSS  </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">JAVASCRIPT</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+    </nav>
+    <div>
+        <div class="row">
+          <div class="col-sm-3 bg-danger left-bar">
+            <ul>
+              <li>Day5|HTML<ol>
+                <li>assignment<ol>
+                  <li>module1<ol>
+                    <li><a href="#" class="text-decoration-none text-warning" active>assignment1.html</a></li>
+                     </ol>
+                     </li>
+                     </ol></li>
+                <li>practice<ol>
+                  <li>module1<ol>
+                    <li><a href="http://localhost:3000/day5/practice/module1/practice_AIM-1.html" class="text-decoration-none text-white">practice1.html</a></li>
+                    <li><a href="http://localhost:3000/day5/practice/module1/practice_AIM-2.html" class="text-decoration-none text-white">practice2.html</a></li>
+                    <li><a href="http://localhost:3000/day5/practice/module1/practice_AIM-3.html" class="text-decoration-none text-white">practice3.html</a></li>
+                    <li><a href="http://localhost:3000/day5/practice/module1/practice_AIM-4.html" class="text-decoration-none text-white">practice4.html</a></li>
+                    <li><a href="http://localhost:3000/day5/practice/module1/practice_AIM-5.html" class="text-decoration-none text-white">practice5.html</a></li>
+                  </ol>
+                  </li>
+                  </ol>
+                  </li></ol></li></ul>
+                  <hr class="w-100 p-2 bg-black text-center">
+                  <ul>
+                    <li>Day6|HTML<ol>
+                      <li>assignment2<ol>
+                        <li>module2<ol>
+                          <li><a href="http://localhost:3000/day6/assignment/New%20folder/index.html" class="text-decoration-none text-white">assignment2.html</a></li>
+                           </ol>
+                           </li>
+                           </ol></li>
+                     </ol></li></ul>
+            
+           </div> 
+           <div class="col-sm-9 main-bar">
+            <div class="my">
+                <h1 class="text-warning">REGISTRATION FORM</h1>
+                <form action="#" method="POST">
+                    <label for="name"><strong>Name:</strong></label><input type="text" name="name" placeholder="enter name" required>
+                    <br><br>
+                    <label for="age"><strong>Age:</strong></label><input type="number" name="age" data-type="number" placeholder="enter age" required>
+                    <br><br>
+                     <label><strong>Gender:</strong></label>
+                     <input type="radio" name="male" id="male">
+                     <label>Male</label>
+                     <input type="radio" name="female" id="female">
+                     <label>Female</label>
+                     <br><br>
+                     <label for="designation"><strong>Designation:</strong></label><input type="text" name="designation" placeholder="enter designation" required>
+                     <br><br>
+                     <label for="salary"><strong>Salary:</strong></label><input type="number" name="salary" data-type="number" placeholder="enter salary" required>
+                    <br><br>
+                     <label for="email"><strong>Email:</strong></label><input type="email" name="email" placeholder="enter email" required>
+                     <br><br>
+                     <label for="Location">Location</label>
+                     <select name="Location" id="vadodara" required>
+                         <option value="vadodara">vadodara</option>
+                         <option value="surat">surat</option>
+                         <option value="dahod">dahod</option>
+                         <option value="anand">anand</option>
+                         <option value="ahmedabad">ahmedabad</option>
+                         <option value="rajkot">rajkot</option>
+                         <option value="kuttch">kuttch</option>
+                    </select>
+                    <br><br>
+                    <label for="Contact"><strong>Contact:</strong></label><input type="tel" name="contact" placeholder="enter contact" required>
+                     <br><br>
+                    <label for="date"><strong>DATE:</strong></label><input type="date" name="date" placeholder="enter date" required>
+                     <br><br>
+                    <input type="submit" name="submit">
+                    </form>
+                </div>
+           </div> 
+        </div>
+        
+    </div>
+
+
+   
+</body>
+</html>

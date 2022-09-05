@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<form name="form1">
+<input id="string" name="string">
+<button type="button" onclick="main(form1.string.value,revstring)">submit</button>
+<p id="demo"></p>
+</form>
+
+<body>
+    <script>
+     function main(string){   
+     var promise = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            var pattern =  (/^[A-Za-z]+$/) 
+            var val1 = form1.string.value
+            if(val1.match(pattern))
+            {
+            resolve();
+            }
+            else
+            {
+            reject();
+            }
+        }, 500);
+    });
+    promise.then(function () {
+    string = [...string].reverse().join("");
+    alert(string);
+    },
+    function(){
+    alert("Wrong input")
+    });
+   }
+   function revstring(demo)
+   {
+   document.getElementById("demo").innerHTML = demo
+   }
+</script>
+</body>
+</html>

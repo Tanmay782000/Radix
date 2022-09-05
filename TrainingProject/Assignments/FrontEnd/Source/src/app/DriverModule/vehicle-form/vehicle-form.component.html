@@ -1,0 +1,40 @@
+<div class="card w-25 p-3 mx-auto mt-4">
+    <div class="card-header bg-dark">
+      <h3 class="text-white">Vehicle Details Form</h3> 
+    </div>
+    <div>
+    <form [formGroup]="FormData" class="w-75 mx-auto mt-3" (ngSubmit)="SubmitForm()">
+
+        <!-- <label for="FirstName">driverId</label>
+        <input type="number" id="val1" class="form-control" formControlName="driverId"> -->
+
+        <label for="vehicle">Selcet Vehicle Type</label>
+        <select id="val2" formControlName="vehicleType" class="w-100 h-100">
+         <option *ngFor="let item of VehicleArray" [ngValue]="item.id">{{item.vehicleName}}</option>
+        </select>
+<!-- 
+        <label for="LastName">vehicleType</label>
+        <input type="number" id="val2" class="form-control" formControlName="vehicleType"> -->
+
+        <label for="email">License No</label>
+        <input type="text" id="val3" class="form-control" formControlName="license">
+
+        <label for="Address">Vehicle Name</label>
+        <input type="text" id="val4" class="form-control" formControlName="vehicleName">
+        
+        <label for="Address">RC Book</label>
+        <input type="text" id="val4" class="form-control" formControlName="rcbook">
+
+        <label for="Address">Adharcard</label>
+        <input type="text" id="val5"  class="form-control" formControlName="adharchad">
+
+        <div class="d-flex justify-content-between">
+        <button class="btn btn-success mt-3 text-center">Submit</button>
+        <a routerLink='/Login' class="d-flex align-items-center" style="text-decoration: none;">Signin?</a>
+        </div>
+
+    </form>
+    
+    </div>
+    </div>
+    

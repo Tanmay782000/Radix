@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3 id="h1"></h3>
+    <h3 id="h2"></h3>
+    <h3 id="h3"></h3>
+</body>
+<script>
+    const res = {
+       name : 'tanmay',
+       collage : 'parul',
+       hobbies : ['netflix','hotstar','amazon prime']
+    };
+
+ const final = document.getElementById("h1")
+      
+ final.innerHTML = `
+ <h1>${res.name}</h>
+ <ul>${res.hobbies.map(item => {
+     return `<li>${item}</li>`;
+ }).join(" ")}
+ </ul>
+ `;
+
+</script>
+</html>

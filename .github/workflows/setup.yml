@@ -1,0 +1,159 @@
+name: CreateSites
+on:
+  workflow_dispatch:
+  
+jobs:
+  build:
+    runs-on: [self-hosted, Windows]
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Create Site and DBUsers
+        run: |
+           $rxjson = get-content -raw -path 'TrainingProject\rx.json'| Convertfrom-Json
+           #getting SiteName
+           $projectName = $rxjson.title
+           $RepoName = "${{ github.event.repository.name }}"
+           $CharArray =$RepoName.Split("-")
+           $EmpCode = $CharArray[0]
+           $EmpName = $CharArray[1]
+           $EmpName = $EmpName.Split(".")
+           $EmpName = $EmpName[0]
+           $siteName = $projectName + "-" + $EmpCode + "-" + $EmpName
+           $siteName = $siteName.ToLower()
+           $databaseMode = $rxjson.Database
+           $siteName 
+           $routeZoneId = "Z032169837NQ71TU05QE1" 
+           #defining IIS sitesName
+           $siteNameApi = "$siteName-Api"
+           $IISPathApi = "IIS:\Sites\$siteNameApi"
+           $domainNameApi = "$siteNameApi.radixind.in"
+           $AppPoolNameApi = $siteNameApi 
+           $siteNamePortal = "$siteName-Portal"
+           $IISPathPortal = "IIS:\Sites\$siteNamePortal"
+           $domainNamePortal = "$siteNamePortal.radixind.in"
+           $AppPoolNamePortal = $siteNamePortal 
+           #create a folder in server under C:\Sites
+           $physicalPathApi = "C:\Sites\$siteNameApi"
+           $physicalPathPortal = "C:\Sites\$siteNamePortal"
+           if (Test-Path -Path $physicalPathApi) {
+               "$physicalPathApi Already exists!"
+           } else {
+               "Creating Folder $physicalPathApi $physicalPathPortal"
+               New-Item $physicalPathApi -Type Directory
+               New-Item $physicalPathPortal -Type Directory
+           } 
+           function CreateSite($IISPath, $site, $domainName, $physicalPath, $AppPoolName ){
+                if (Test-Path $IISPath) 
+                { 
+                    Write-Host "$site Already exists" 
+                }
+                else {
+                    Write-Host "$site does not exists. Please wait creating a new one"
+                    New-IISSite -Name "$site" -BindingInformation "*:80:$domainName" -PhysicalPath "$physicalPath"
+                    "Creating new $AppPoolName"
+                    New-WebAppPool -Name "$AppPoolName" -Force
+                    Set-ItemProperty -Path IIS:\AppPools\$AppPoolName managedRuntimeVersion "v4.0"
+                    Set-ItemProperty $IISPath -Name applicationpool -Value $AppPoolName
+                }
+           }
+           # creating Api site 
+           Import-Module webadministration
+           CreateSite $IISPathApi $siteNameApi $domainNameApi $physicalPathApi $AppPoolNameApi
+           # creating Portal Site 
+           CreateSite $IISPathPortal $siteNamePortal $domainNamePortal $physicalPathPortal $AppPoolNamePortal
+           write-Host "New sites and app pool created:-"
+            ############# sending to aws bucket #################################
+           function SendingPwd($dbMode, $dbName, $dbUser, $dbPwd){
+               cd "C:/db"
+               node app.js $dbUser $dbName $dbPwd $dbMode
+               aws s3 cp "$dbMode-passwords.json" s3://training-student/db-passwordlist/
+   
+               write-Host "Your DBName is:" $dbName
+               write-Host "Your HostName is: 43.204.134.14"
+               Write-Host "Your Username is :" $dbUser
+               Write-Host "Your new Password is :"$dbPwd
+           }
+
+               ################################ if sql then Creating a sql user, sql db and mapped sql with db ###################
+           if ( $databaseMode -like "sql" ){
+               $DBName = $siteName
+               $DBUser = $siteName
+               $HostName = "43.204.134.14"
+               $HostUser = "sa"
+               $hostPsw = get-content -raw -path 'C:\db\dbpasswords.json'| Convertfrom-Json
+               $hostPsw = $hostPsw.passwords.Sql
+         
+               $check = sqlcmd -S $HostName -U $HostUser -P $hostPsw -Q "IF EXISTS(SELECT * FROM master.sys.databases WHERE name='$DBName') BEGIN PRINT 'Database Exists' END"
+               if ( $check ){
+                   Write-Host "Database Already Exists"
+               }
+               else{
+                   Write-Host "Database Not Exists"
+                   # creating a random password
+                   $chars = [char[]]"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
+                   $newPassword = [string](($chars[0..25]|Get-Random)+(($chars|Get-Random -Count 14) -join ""))
+                   $DBpwd = $newPassword
+                   sqlcmd -S $HostName -U $HostUser -P $hostPsw -Q "Create Database [$DBName]"
+                   sqlcmd -S $HostName -U $HostUser -P $hostPsw -Q "USE [master] CREATE LOGIN [$DBUser] WITH PASSWORD=N'$DBPwd', DEFAULT_DATABASE=[master], CHECK_EXPIRATION=OFF, CHECK_POLICY=OFF"
+                   sqlcmd -S $HostName -U $HostUser -P $hostPsw -Q "USE [$DBName] ALTER AUTHORIZATION ON DATABASE::[$DBName] to [$DBUser] USE MASTER DENY VIEW ANY DATABASE TO [$DBuser]"
+                   # Printing Data
+                   SendingPwd "sql" $DBName $DBUser $DBPwd
+                 }
+               }
+               elseif ( $databaseMode -like "mysql" ){
+               ########################## creating mysql user , mysql db and mapped mysql user with mysql db #################
+               $CharArray =$siteName.Split("-")
+               $siteName = $CharArray[0]
+               $DBName = $siteName
+               $DBUser = $siteName
+               $HostName = "43.204.134.14"
+   
+               if (mysql --login-path=local -e "SELECT SCHEMA_NAME FROM INFORMATION_SCHEMA.SCHEMATA WHERE SCHEMA_NAME='$DBName'"){
+                   Write-Host "Database Exists"
+               }
+               else {
+                   Write-Host "Databse Not Exists"
+                   # creating a random password
+                   $chars = [char[]]"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
+                   $newPassword = [string](($chars[0..25]|Get-Random)+(($chars|Get-Random -Count 14) -join ""))
+                   $DBpwd = $newPassword
+                   # process starts
+                   mysql --login-path=local -e "CREATE DATABASE IF NOT EXISTS $DBName;"
+                   mysql --login-path=local -e "CREATE USER IF NOT EXISTS '$DBUser'@'%' IDENTIFIED BY '$DBpwd';"
+                   mysql --login-path=local -e "GRANT SELECT, INSERT, CREATE, ALTER, DROP, LOCK TABLES, CREATE TEMPORARY TABLES, DELETE, UPDATE, EXECUTE ON $DBName .* TO'$DBUser'@'%';"
+                   
+                   Write-Host "Database and User is created"
+                   SendingPwd "mysql" $DBName $DBUser $DBPwd
+               }
+           }
+           elseif ( $databaseMode -like "mongodb" ){
+               $hostPsw = "root@8"
+               $hostUser = "root"
+           
+               $chars = [char[]]"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
+               $newPassword = [string](($chars[0..25]|Get-Random)+(($chars|Get-Random -Count 14) -join ""))
+               $DBpwd = $newPassword
+               $CharArray =$siteName.Split("-")
+               $siteName = $CharArray[0]
+               $DBName = $siteName
+               $DBUser = $siteName
+           
+               # mongo user creation process starts
+               mongo --eval "db = db.getSiblingDB('admin'), db.auth('root', '$hostPsw'), db = db.getSiblingDB('$DBName'), db.exampleCollection.insert({name: 'User', Name: 'demo'}), db.createUser({user: '$DBUser',pwd: '$DBpwd',roles: [{ role: 'readWrite', db: '$DBName' }]}) "
+               SendingPwd "mongo" $DBName $DBUser $DBPwd
+           }
+           else {
+               write-host "Please give the valid database name in rx.json like sql,mysql or mongodb"
+           }
+
+           #Creating A Domain Name for Api:
+           aws route53 change-resource-record-sets --hosted-zone-id $routeZoneId --change-batch @"
+           {\"Changes\": [{\"Action\": \"CREATE\",\"ResourceRecordSet\": {\"Name\": \"$domainNameApi\",\"Type\": \"A\",\"TTL\": 300,\"ResourceRecords\": [{\"Value\": \"43.204.134.14\"}]}}]}
+           "@
+   
+           aws route53 change-resource-record-sets --hosted-zone-id $routeZoneId --change-batch @"
+           {\"Changes\": [{\"Action\": \"CREATE\",\"ResourceRecordSet\": {\"Name\": \"$domainNamePortal\",\"Type\": \"A\",\"TTL\": 300,\"ResourceRecords\": [{\"Value\": \"43.204.134.14\"}]}}]}
+           "@
+           Write-Host "Please note your Api site is deployed url is : $domainNameApi"
+           Write-Host "Please note your Portal site is deployed url is : $domainNamePortal"

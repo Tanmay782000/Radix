@@ -1,0 +1,9 @@
+split -> prints the before mentioned word in array
+trim->removes white spaces
+slice->get specified value from the string 
+
+into assignment
+1)validatedate(document.form1.text1) // targets location of textbox
+               | 
+               ^ 
+              into js file validatedate(inputText) 

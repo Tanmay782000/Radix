@@ -1,0 +1,67 @@
+name: Sonar-Development
+on:
+  push:
+    branches: development
+
+  workflow_dispatch:
+  
+jobs:
+  build:
+    name: Sonar Report Build
+    runs-on: [self-hosted, Linux]
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: sonar build
+        run: sonar-scanner
+        
+  dotnetcore:
+    name: Sonar Report Dotnet
+    runs-on: [self-hosted, Linux]
+    needs: build
+    steps:
+    - name: Sonar Report Dotnet
+      run: |
+          cd DotnetCore
+          referencePath=`find $(pwd)/. -name "*.csproj" -not -path "temp/*"`
+          dotnet new webapi --name temp
+          cd temp
+          dotnet add reference $referencePath
+          dotnet sonarscanner begin /k:"${{ github.event.repository.name }}-dotnet" /d:sonar.host.url="http://3.6.85.37:9000"  /d:sonar.login="0bb865db6e92abb21c06d680e52706e96f61f6b6"
+          dotnet restore 
+          dotnet build
+          dotnet sonarscanner end /d:sonar.login="0bb865db6e92abb21c06d680e52706e96f61f6b6"
+        
+        
+  copy:
+    name: copy
+    runs-on: [self-hosted, Linux]
+    needs: dotnetcore
+    steps:
+    - name: copy-repo
+      run: |
+        sudo rm -rfv /var/www/html/${{ github.event.repository.name }}
+          cd ..
+          sudo cp -r ${{ github.event.repository.name }} /var/www/html/
+  cleanup: 
+    name: cleanup
+    runs-on: [self-hosted, Linux]
+    needs: copy
+    steps:
+      - name: repo-clean
+        run: |
+          cd ..
+          pwd
+          ls -la
+          rm -rfv ${{ github.event.repository.name }}
+        
+  
+  Json:
+    runs-on: [self-hosted, Linux]
+    needs: cleanup
+    steps:
+      - name: Run a node app to generate report
+        run: |
+          cd /var/www/html
+          sudo node app.js ${{ github.event.repository.name }}

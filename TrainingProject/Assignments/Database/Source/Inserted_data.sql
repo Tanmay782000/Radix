@@ -1,0 +1,233 @@
+INSERT INTO OBJECT_TYPES VALUES('GENDER')
+INSERT INTO OBJECT_TYPES VALUES('PAYMENT_MODE')
+INSERT INTO OBJECT_TYPES VALUES('PAYMENT_STATUS')
+INSERT INTO OBJECT_TYPES VALUES('VEHICLE_TYPE')
+INSERT INTO OBJECT_TYPES VALUES('RIDE_STATUS')
+INSERT INTO OBJECT_TYPES VALUES('DIVER_CONFIRMATION_STATUS')
+
+select * from OBJECT_DETAILS
+select * from PHONE_NO
+select * from LOCATION_DETAILS
+select * from OBJECT_DETAILS
+
+select * from DRIVER
+
+select * from Payment
+select * from BOOKING_REQUEST
+select * from PHONE_NO
+
+INSERT INTO OBJECT_DETAILS VALUES(1,'MALE')
+INSERT INTO OBJECT_DETAILS VALUES(1,'FEMALE')
+INSERT INTO OBJECT_DETAILS VALUES(1,'OTHER')
+
+INSERT INTO OBJECT_DETAILS VALUES(2,'CASH_ON_DELIVERY')
+
+INSERT INTO OBJECT_DETAILS VALUES(3,'COMPLETE')
+INSERT INTO OBJECT_DETAILS VALUES(3,'FAILED')
+
+INSERT INTO OBJECT_DETAILS VALUES(4,'BIKE')
+INSERT INTO OBJECT_DETAILS VALUES(4,'RIKSHA')
+INSERT INTO OBJECT_DETAILS VALUES(4,'CAR')
+INSERT INTO OBJECT_DETAILS VALUES(4,'SUV')
+
+INSERT INTO OBJECT_DETAILS VALUES(5,'NEW')
+INSERT INTO OBJECT_DETAILS VALUES(5,'CONFIRMED')
+INSERT INTO OBJECT_DETAILS VALUES(5,'CANCELED')
+
+INSERT INTO OBJECT_DETAILS VALUES(6,'NEW')
+INSERT INTO OBJECT_DETAILS VALUES(6,'REJECTED')
+INSERT INTO OBJECT_DETAILS VALUES(6,'CONFIRMED')
+
+
+INSERT INTO LOCATION_DETAILS VALUES('Vadodara','AirportCircle',390022,22.3072,73.1812,GETDATE(),GETDATE())
+INSERT INTO LOCATION_DETAILS VALUES('Vadodara','Mandvi',390027,22.3002,73.2105,GETDATE(),GETDATE())
+INSERT INTO LOCATION_DETAILS VALUES('Vadodara','Akota',390022,22.2929,73.1710,GETDATE(),GETDATE())
+INSERT INTO LOCATION_DETAILS VALUES('Vadodara','Fatehpura',390022,22.3067,73.2080,GETDATE(),GETDATE())
+INSERT INTO LOCATION_DETAILS VALUES('Vadodara','Chani',390022,22.3633,73.1658,GETDATE(),GETDATE())
+INSERT INTO LOCATION_DETAILS VALUES('Vadodara','Harni',390022,22.33339,73.2352475,GETDATE(),GETDATE())
+INSERT INTO LOCATION_DETAILS VALUES('Vadodara','Waghodiya',390022,22.298426,73.237997,GETDATE(),GETDATE())
+INSERT INTO LOCATION_DETAILS VALUES('Vadodara','Tarsali',390022,22.2563,73.2162,GETDATE(),GETDATE())
+
+SELECT * FROM LOCATION_DETAILS
+
+Insert into OBJECT_DETAILS values(5,'pending'); 
+
+
+INSERT INTO CUSTOMER VALUES('tANMAY','MEHTA',3,'TANMAY@GMAIL.COM','ASDAS','ADASD',GETDATE(),GETDATE())
+
+SELECT * FROM CUSTOMER
+select * from PHONE_NO
+
+select * from BOOKING_REQUEST
+
+select * from OBJECT_TYPES
+--store procedure
+select * from VEHICLE_DETAILS
+
+INSERT INTO VEHICLE_DETAILS VALUES(1,7,'324DT','WRW23','234FSF',GETDATE(),GETDATE());
+
+select * from PAYMENT
+
+insert into PAYMENT values(GETDATE(),GETDATE(),3,4000,3);
+
+
+
+select * from DRIVER
+select * from LOCATION_DETAILS
+
+insert into DRIVER values('suresh','verma','t@t.com','td7890',4566575,'Vadodara','./assets/user.com',GETDATE(),GETDATE())
+
+select * from DRIVER as dr inner join BOOKING_REQUEST as req inner join LOCATION_DETAILS lx on DRIVER.EMAIL 
+
+select * from DRIVER
+select * from VEHICLE_DETAILS
+
+
+select * from DRIVER as drv inner join VEHICLE_DETAILS as vhd on drv.DRIVER_ID = vhd.DRIVER_ID inner join LOCATION_DETAILS as lcd on lcd.LOCATION_NAME = drv.ADDRESS  
+
+
+delete from BOOKING_REQUEST where BOOKING_ID = 15
+delete from BOOKING_REQUEST where BOOKING_ID = 17
+delete from BOOKING_REQUEST where BOOKING_ID = 18
+delete from BOOKING_REQUEST where BOOKING_ID = 19
+delete from BOOKING_REQUEST where BOOKING_ID = 20
+delete from BOOKING_REQUEST where BOOKING_ID = 21
+delete from BOOKING_REQUEST where BOOKING_ID = 22
+delete from BOOKING_REQUEST where BOOKING_ID = 23
+delete from BOOKING_REQUEST where BOOKING_ID = 24
+delete from BOOKING_REQUEST where BOOKING_ID = 25
+delete from BOOKING_REQUEST where BOOKING_ID = 26
+delete from BOOKING_REQUEST where BOOKING_ID = 27
+delete from BOOKING_REQUEST where BOOKING_ID = 28
+
+
+delete from PAYMENT
+
+
+select * from OBJECT_DETAILS
+select * from OBJECT_TYPES
+
+
+select * from DRIVER
+select * from VEHICLE_DETAILS
+--create the procedure
+
+create OR alter procedure GetEmployees(@id int,@location varchar(50))
+as
+begin
+select distinct
+pk.PAYMENT_ID as PaymentId,
+bk.VEHICLE_ID as VehicleId,
+bk.PHONE_ID as PhoneId,
+bk.BOOKING_ID as BookingId,
+bk.DISTANCE,
+concat(lds.LOCATION_ADDRESS, '-------',ldd.LOCATION_ADDRESS ) as LocationAddress,
+lds.LOCATION_DETAILS as LocationDetails,
+lds.LOCATION_NAME as LocationName,
+phn.Mobile_No as MobileNo,
+bk.STATUS_ID
+from BOOKING_REQUEST as bk 
+inner join VEHICLE_DETAILS as dr on @id = bk.VEHICLE_ID
+inner join DRIVER as lcd on dr.DRIVER_ID = lcd.DRIVER_ID 
+inner join LOCATION_DETAILS as lds on @location = lds.LOCATION_NAME and lds.LOCATION_DETAILS = bk.SOURCE 
+inner join LOCATION_DETAILS as ldd on @location = ldd.LOCATION_NAME and  ldd.LOCATION_DETAILS = bk.DESTINATION
+inner join PHONE_NO as phn on phn.PHONE_ID = bk.PHONE_ID
+inner join PAYMENT as pk on pk.BOOKING_ID = bk.BOOKING_ID
+where bk.STATUS_ID=11
+end
+--bk.PHONE_ID,tdm.VEHICLE_ID,
+
+select * from BOOKING_REQUEST
+exec GetEmployees 7,'Vadodara'
+
+sp_helptext GetEmployees
+
+select * from LOCATION_DETAILS
+select * from DRIVER
+--
+select * from VEHICLE_DETAILS
+
+select TOP 1 * from BOOKED_SERVICE order by BOOKED_SERVICE desc 
+select TOP 1 * from BOOKING_REQUEST where PHONE_ID = 2 order by BOOKING_ID desc 
+
+select * from BOOKED_SERVICE
+select * from BOOKING_REQUEST
+
+select * from driver
+select * from PHONE_NO
+--procedure 2
+
+update DRIVER
+set PROFILE_PHOTO = './assets/D1.jpg'
+where DRIVER_ID = 54
+
+update DRIVER
+set PROFILE_PHOTO = './assets/D2.jpg'
+where DRIVER_ID = 55
+
+update DRIVER
+set PROFILE_PHOTO = './assets/D3.jpg'
+where DRIVER_ID = 56
+
+
+update DRIVER
+set PROFILE_PHOTO = './assets/D4.jpg'
+where DRIVER_ID = 59
+
+
+create OR alter procedure CancelRequest(@id int)
+as 
+begin
+update BOOKING_REQUEST
+set STATUS_ID = 13
+where BOOKING_ID = @id
+end
+
+exec CancelRequest 38
+
+
+select * from PHONE_NO
+select * from BOOKING_REQUEST
+
+select * from RidePin
+
+select * from VEHICLE_DETAILS
+select * from DRIVER
+select * from PHONE_NO
+
+select * from PAYMENT
+
+
+
+
+select * from BOOKING_REQUEST
+select * from BOOKED_SERVICE
+select * from LOCATION_DETAILS
+
+
+
+create or alter procedure MyProcedure(@id int)
+as 
+begin
+select distinct phnno.Mobile_No as phnId,OD.OBJ_NAME as objName,BOOKEDS.CREATE_DATE as cdate,concat(LOCATIODD.LOCATION_ADDRESS,'--------',LOCATIOND.LOCATION_ADDRESS) as sourcetoDestination from BOOKING_REQUEST as BOOKINGR
+Inner join BOOKED_SERVICE as BOOKEDS
+on BOOKINGR.BOOKING_ID = BOOKEDS.BOOKING_ID
+
+Inner join LOCATION_DETAILS as LOCATIOND
+on LOCATIOND.LOCATION_DETAILS = BOOKINGR.SOURCE  
+
+inner join DRIVER as DRD 
+on DRD.ADDRESS = LOCATIOND.LOCATION_NAME
+
+Inner join LOCATION_DETAILS as LOCATIODD
+on LOCATIOND.LOCATION_DETAILS = BOOKINGR.SOURCE  
+
+INNER join OBJECT_DETAILS as OD
+on OD.OBJECT_DETAILS_ID = BOOKEDS.STATUS_ID
+
+INNER JOIN PHONE_NO as phnno 
+on phnno.PHONE_ID = BOOKEDS.PHONE_ID
+ 
+where BOOKEDS.DRIVER_ID = @id
+end
+

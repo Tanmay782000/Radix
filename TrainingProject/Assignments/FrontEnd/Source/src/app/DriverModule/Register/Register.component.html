@@ -1,0 +1,45 @@
+<div class="card w-25 p-3 mx-auto mt-4">
+    <div class="card-header bg-dark">
+      <h3 class="text-white">Drive with Uber</h3> 
+    </div>
+    <div>
+    <form [formGroup]="FormData" class="w-75 mx-auto mt-3" (ngSubmit)="SubmitForm()">
+        <label for="FirstName">First Name</label>
+        <input type="text" id="val1" class="form-control" formControlName="firstName">
+        <label for="LastName">Last Name</label>
+        <input type="text" id="val2" class="form-control" formControlName="lastName">
+        <input type="hidden" formControlName="phoneNo">
+        <label for="email">Email</label>
+        <input type="email" id="val3" class="form-control" formControlName="email">
+        <label for="Address">phoneNo</label>
+        <input type="number" id="val4" class="form-control" formControlName="phoneNo">
+         
+        <label for="Address">Address</label>
+        <select id="datalist" class="w-100 border-5" formControlName="address">
+           <option value="Vadodara">Vadodara</option>
+           <option value="Ahmedabad">Ahmedabad</option>
+           <option value="Surat">Surat</option>
+           <option value="Rajkot">Rajkot</option>
+        </select>
+     
+        <label for="Address">profilePhoto</label>
+        <input type="text" id="val5"  class="form-control" formControlName="profilePhoto">
+        <label for="Address">password</label>
+        <input type="text" id="val6"  class="form-control" formControlName="password">
+        <div class="d-flex justify-content-between">
+          <button class="btn btn-success mt-3 text-center" [disabled]="!FormData.valid">submit</button>
+        <a routerLink='/Login' class="d-flex align-items-center" style="text-decoration: none;">Signin?</a>
+        </div>
+    </form>
+    </div>
+    </div>
+    
+    <!-- public firstName:string;
+    public lastName:string;
+    public email:string;
+    public password:string;
+    public phoneNo:string;
+    public address:string;
+    public profilePhoto:string;
+    public createDate:Date;
+    public modifiedDate:Date; -->

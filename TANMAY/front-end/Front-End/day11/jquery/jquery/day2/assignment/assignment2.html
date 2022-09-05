@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
+  <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+    <script src="jquery.js"></script>
+</head>
+<body class="bg-warning">
+    <h1 class="text-danger text-center">Json data fetched using Jquery</h1>
+    <table class="table table-striped h-75 w-75 mx-auto" aria-describedby="table">
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Gender</th>
+          <th>Status</th>
+          </tr>
+    </table>
+    <p></p>
+    <script>
+        $(document).ready(function(){
+        $.getJSON("https://gorest.co.in/public-api/users",function(key1){
+        $.each(key1.data,function(i,field){
+            $("table").append("<tr><td>" + JSON.stringify(field.id) + "</td>" + "<td>" + JSON.stringify(field.name) + "</td>" + "<td>"  + JSON.stringify(field.email) + "</td>" +  "<td>"  + JSON.stringify(field.gender) + "</td>" + "<td>"  + JSON.stringify(field.status) + "</td>" +  "</td></tr>")
+        })    
+        })
+        });          
+    </script>
+</body>
+</html>

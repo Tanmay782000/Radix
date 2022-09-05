@@ -1,0 +1,40 @@
+<app-post-list (Lapp)="listapp($event)"></app-post-list>
+<div class="row">
+  <div class="col-6 bg-primary">
+    <div *ngFor="let i of arr">
+      <h4 class="text-center">
+        <strong>{{ i.postname }}</strong>
+      </h4>
+      <img src="{{ i.postimage }}" class="d-block mx-auto" alt="image"/>
+      <p class="text-center">{{ i.postdesc }}</p>
+      <button (click)="myfun()" class="btn btn-danger d-block mx-auto mt-3">
+        hello
+      </button>
+      <hr class="w-50 mx-auto" />
+    </div>
+  </div>
+  <div class="col-6 mx-auto">
+    <button
+      (click)="Showdata()"
+      class="btn btn-success d-block text-center mx-auto"
+    >
+      Show deatilas
+    </button>
+    <table class="table table-striped" aria-describedby="table">
+      <tr>
+        <th>Name</th>
+        <th>caption</th>
+        <th>Photo</th>
+        <th>date</th>
+        <th>likes</th>
+      </tr>
+      <tr *ngFor="let ng of newarr; &quot;mx-auto&quot;">
+        <td>{{ ng.pname }}</td>
+        <td>{{ ng.desc }}</td>
+        <td><img src="{{ ng.photo }}" style="height:80px;" alt="image" /></td>
+        <td>{{ ng.postdate }}</td>
+        <td>{{ ng.likes }}</td>
+      </tr>
+    </table>
+  </div>
+</div>

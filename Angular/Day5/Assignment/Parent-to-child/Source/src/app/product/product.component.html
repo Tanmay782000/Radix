@@ -1,0 +1,14 @@
+<div>
+<h1>Add Product</h1>
+<label for="product">product Name</label>
+<input type="text" [(ngModel)]="Username"><br><br>
+<label for="price">Price</label>
+<input type="number" [(ngModel)]="Price"><br><br>
+<label for="price">Quantity</label>
+<input type="number" [(ngModel)]="Quantity"><br><br>
+<button (click)="add()">submit</button>
+</div>
+<div>
+<app-product-list *ngFor="let user of List" [UserName]="user.name" [price]="user.price" [quantity]="user.quantity" [discount]="user.discount">
+</app-product-list>
+</div>

@@ -1,0 +1,48 @@
+<div>
+  <ng-container *ngIf="bool; then thisblock else thatblock"></ng-container>
+
+  <ng-template #thisblock>
+    <div class="text-danger d-flex justify-content-center align-items-center">{{error}}</div>
+  </ng-template>
+
+  <ng-template #thatblock>
+    <div class="mt-5 container">
+      <h3 class="text-center mt-3 text-danger">Show Number of requests</h3>
+      <table class="table">
+
+        <thead class="table-danger">
+          <tr>
+            <th scope="col">
+              <h4>ID</h4>
+            </th>
+            <th scope="col">
+              <h4>Mobile Number</h4>
+            </th>
+            <th scope="col">
+              <h4>PickUp - Destination</h4>
+            </th>
+            <th scope="col">
+              <h4>Distance</h4>
+            </th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of array" class="table-primary">
+            <td>{{item.bookingId}}</td>
+            <td>{{item.mobileNo}}</td>
+            <td>{{item.locationAddress}}</td>
+            <td>{{item.distance}} kms</td>
+            <td><button class="btn btn-danger text-white"
+                (click)="Cancel(item.bookingId,item.phoneId,item.vehicleId,item.paymentId,item.driverId)">Cancel</button>
+            </td>
+            <td><button class="btn btn-success ml-2 text-white"
+                (click)="Confirm(item.bookingId,item.phoneId,item.vehicleId,item.paymentId,item.driverId)">Confirm</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </ng-template>
+</div>

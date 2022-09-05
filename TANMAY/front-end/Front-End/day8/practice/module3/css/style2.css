@@ -1,0 +1,19 @@
+.flex{
+    display: flex;
+    background-color: royalblue;
+    width:max-content;
+    flex-direction: row-reverse;
+    float:right;
+    clear:both;
+}
+.flex div{
+    background-color:yellowgreen;
+    margin:20px;
+    padding:20px;
+    font-size: 30px;
+}
+
+h3,h1{
+  float:right;
+  clear: both;
+}

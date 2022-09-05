@@ -1,0 +1,34 @@
+.sticky-top{
+    text-shadow: 3px 3px blue;
+}
+.sticky-left{
+    height:700px;
+}
+@media(max-width:800px)
+{
+    .row .col-4{
+         width: 100% !important;
+         height: max-content;
+    }
+    .row .col-8{
+        width: 100% !important;
+    }
+}
+.overflow-auto{
+    height:700px;
+}
+#education{
+    margin-top: 1000px;
+}
+.text-wrap{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+.col-6 .pt-5 .mb-5{
+    color: white;
+}
+#skills{
+margin-top: 1000px;
+}
+#project{
+
+}

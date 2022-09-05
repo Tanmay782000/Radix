@@ -1,0 +1,11 @@
+#datalist{
+    border-radius: 4px;
+    border-color: gray;
+    height: 38px!important;
+}
+
+#val1,#val2,#val3,#val4,#val5,#val6{
+    border-radius: 4px;
+    border-width: 2px;
+    border-color: black;
+}

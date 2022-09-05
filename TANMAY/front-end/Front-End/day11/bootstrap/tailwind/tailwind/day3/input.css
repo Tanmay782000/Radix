@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.card{
+    @apply rounded bg-green-400 shadow-2xl overflow-hidden w-56 md:w-80 relative;
+}
+.btn {
+    @apply rounded cursor-pointer md:bg-purple-700  md:text-red-600 w-max py-2 px-2 font-bold overflow-hidden;
+}

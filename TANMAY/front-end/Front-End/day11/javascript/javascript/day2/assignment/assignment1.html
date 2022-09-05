@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<div class="mail">
+<h2>Input a valid date</h2>
+<form name="form1" action="#"> 
+<input type='text' name='text1'/>
+&nbsp;
+<div class="submit"><input type="submit" name="submit" value="Submit" onclick="validatedate(document.form1.text1)"/></div>
+&nbsp;
+</form>
+</div>
+  <script>
+  function validatedate(inputText)
+  {
+  var dateformat = /^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$/;
+  var num = /^[A-Za-z]+$/;
+  
+  if(!inputText.value.match(num))
+  {
+     if(inputText.value.match(dateformat))
+     {   
+     var ListofDays = [31,28,31,30,31,30,31,31,30,31,30,31];
+     var dd,mm  
+     if(dd>ListofDays[mm])
+         {
+         alert('Invalid date format!');
+         return false;
+         }
+         else{
+           alert("valid date")
+         }
+   }
+   else
+   {
+   alert("Invalid date format!");
+   return false;
+   }
+}
+   else
+    {
+    alert("only numbers are allowed");
+    }
+}
+</script>
+</body>
+</html>

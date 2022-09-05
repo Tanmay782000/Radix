@@ -1,0 +1,15 @@
+<div class="card w-25 p-3 mx-auto mt-4">
+    <div class="card-header bg-dark">
+        <h3 class="text-white">Drive Login</h3>
+    </div>
+    <div>
+        <form class="w-75 mx-auto mt-3">
+            <label for="FirstName">UserName</label>
+            <input type="text" class="form-control" [(ngModel)]="username" [ngModelOptions]="{standalone:true}" required>
+            <label for="LastName">Password</label>
+            <input type="password" class="form-control" [(ngModel)]="password" [ngModelOptions]="{standalone:true}" required>
+            <small class="text-danger">{{errors}}</small><br>
+            <button (click)="SubmitForm()" class="btn btn-success">Login</button>
+        </form>
+    </div>
+</div>

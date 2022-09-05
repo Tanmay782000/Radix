@@ -1,0 +1,139 @@
+<div id="my">
+<div class="row mx-auto">
+<div class="col-sm-12 first container">
+<h2 id="h3" class="text-center text-primary">Student Form</h2>
+<form action="" [formGroup]="myForm" (ngSubmit)="submitdata()">
+  <div class="row">
+    <div class="col-sm-6">
+<div formGroupName="Name">
+<label for="fname">First Name:</label>
+<input type="text" formControlName="firstname"><small *ngIf="fname?.invalid">firstname is Required</small><br><br>
+<label for="fname">Middle Name:</label>
+<input type="text" formControlName = "middlename"><small *ngIf="mname?.invalid">firstname is Required</small><br><br>
+<label for="fname">Last Name:</label>
+<input type="text" formControlName = "lastname"><small *ngIf="lname?.invalid">firstname is Required</small>
+</div><br>
+<label for="Doj">Date of joining:</label>
+<input type="date" formControlName = "DOB"><br><br>
+<label for="Place_of_birth">Place of birth:</label>
+<input type="text" formControlName = "Place_of_birth"><br><br>
+<label for="First_language">First language:</label>
+<input type="text" formControlName = "First_language"><br><br>
+<div formGroupName="Address">
+ <label for="city">City</label>
+ <select formControlName="city">
+  <option value="vadodara">Vadodara</option>
+  <option value="surat">surat</option>
+ </select>    <!--small *ngIf="city?.invalid">city is Required</small-->
+ <br><br>
+ <label for="state">State</label>
+ <select formControlName="state">
+   <option value="gujarat">Gujarat</option>
+   <option value="Maharashtra">Maharashtra</option>
+   <option value="Rajasthan">Rajasthan</option>
+ </select> <!--small *ngIf="state?.invalid">state is Required</small-->
+ <br><br>
+ <label for="country">Country</label>
+ <select formControlName="country">
+   <option value="India">India</option>
+   <option value="India">Pakistan</option>
+   <option value="India">Srilanka</option>
+ </select>     <!--small *ngIf="city?.invalid">country is Required</small-->
+ <br><br>
+</div>  
+
+<div formGroupName="mother">
+ <label for="firstname">Mother-Firstname</label>
+ <input type="text" formControlName="firstname"><br><br>
+ <label for="middlename">Mother-Middlename</label>
+ <input type="text" formControlName="middlename"><br><br>
+ <label for="lastname">Mother-Lastname</label>
+ <input type="text" formControlName="lastname"><br><br>
+</div>
+</div>
+<div class="col-sm-6">
+<label for="Email">Email</label>
+<input type="email" formControlName="Email"><small *ngIf="email?.invalid">Email Id contains @</small><br><br>
+<label for="Education_Qualification">Education_Qua</label>
+<input type="text" formControlName="Education_Qualification"><br><br>
+<label for="Profession">Profession</label>
+<input type="text" formControlName="Profession"><br><br>
+<label for="Designation">Designation</label>
+<input type="text" formControlName="Designation"><br><br>
+<label for="Phone">Phone</label>
+<input type="text" formControlName="Phone"><br><br>
+<div formArrayName="Emergency_List">
+<div *ngFor="let d of emergencychild.controls;let i=index">
+<label for="Emergency_List">Emergency Contact</label>
+<input type="text" placeholder="enter number" [formControlName]="i"><br><br>
+</div>
+</div>
+<label for="Relation">Relation</label>
+<input type="text" formControlName="Relation"><br><br>
+<div formArrayName="Reference_Details">
+  <div *ngFor="let s of referencechild.controls;let b=index">  
+  <label for="Reference_Details">Reference_Details</label>
+  <input type="text" placeholder="enter referances" [formControlName]="b"><br><br>
+  </div>
+</div>
+<button [disabled]="myForm.invalid" class="mb-5 btn btn-danger">Submit</button>
+</div>
+</div>
+</form>
+<div>
+ <div class="row"> 
+<div class="col-sm-12 second">
+<h2 class="text-center text-success">Show Student Data</h2>
+<div id="tableid">
+ <table class="table table-striped" aria-describedby="table">
+  <tr>
+   <th>FName</th>
+   <th>MName</th>
+   <th>LName</th>
+   <th>DOB</th>
+   <th>BirthPlace</th>
+   <th>First-lang</th>
+   <th>City</th>
+   <th>State</th>
+   <th>Country</th>
+   <th>Pin</th>
+   <th>M-Firstname</th>
+   <th>M-Middlename</th>
+   <th>M-Lastname</th>
+   <th>Email</th>
+   <th>Edu_Qua</th>
+   <th>Profession</th>
+   <th>Designation</th>
+   <th>Phone</th>
+   <th>EmergencyList</th>
+   <th>Relation</th>
+   <th>RefDetails</th>
+  </tr>
+  <tr *ngFor="let myarr of newarr">  
+   <td>{{myarr.Name.firstname}}</td>
+   <td>{{myarr.Name.middlename}}</td>
+   <td>{{myarr.Name.lastname}}</td>
+   <td>{{myarr.DOB}}</td>
+   <td>{{myarr.Place_of_birth}}</td>
+   <td>{{myarr.First_language}}</td>
+   <td>{{myarr.Address.city}}</td>
+   <td>{{myarr.Address.state}}</td>
+   <td>{{myarr.Address.country}}</td>
+   <td>{{myarr.Address.pin}}</td>
+   <td>{{myarr.mother.firstname}}</td>
+   <td>{{myarr.mother.middlename}}</td>
+   <td>{{myarr.mother.lastname}}</td>
+   <td>{{myarr.Email}}</td>
+   <td>{{myarr.Education_Qualification}}</td>
+   <td>{{myarr.Profession}}</td>
+   <td>{{myarr.Designation}}</td>
+   <td>{{myarr.Phone}}</td>
+   <td>{{myarr.Emergency_List}}</td>
+   <td>{{myarr.Relation}}</td>
+   <td>{{myarr.Reference_Details}}</td>
+  </tr>
+ </table>
+</div>
+</div>
+</div>
+</div>

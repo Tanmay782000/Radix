@@ -1,0 +1,68 @@
+<div>
+<div class="row container mx-auto">
+    <div class="col-sm-6">
+        <h1>Add the Employees</h1>
+<label for="employeeid">EmployeeID</label>
+<input type="number" [(ngModel)] = "EmployeeId"><br><br>
+<label for="name">Name</label>
+<input type="text" [(ngModel)] = "Name"><br><br>
+<label for="address">Address</label>
+<input type="text" [(ngModel)] = "Address"><br><br>
+<label for="gender">Gender</label>
+<select [(ngModel)] = "Gender">
+<option value="male">male</option>
+<option value="female">female</option>
+</select><br><br>
+<label for="DOJ">Date of Joining</label>
+<input type="Date" [(ngModel)] = "DOJ"><br><br>
+<label for="DOJ">Hobbies</label>
+<input type="text" [(ngModel)] = "Hobbies"><br><br>
+<button class="btn btn-danger d-flex justify-center" (click) = "hello()">SUBMIT</button><br><br>
+</div>
+<div class="col-sm-6">
+    <h1>Added Employees</h1>
+<table class="table table-striped" aria-describedby="table">
+<tr>
+    <th>EmployeeId</th>
+    <th>Name</th>
+    <th>Address</th>
+    <th>Gender</th>
+    <th>Hobbies</th>
+    <th>DOJ</th>
+</tr>
+<div *ngIf="'hello'; then thenBlock else first"></div>
+<ng-template #thenBlock>
+<tr *ngFor="let bob of Employee">
+<td>{{bob.employeeId}}</td>
+<td>{{bob.name}}</td>
+<td>{{bob.address}}</td>
+<td>{{bob.gender}}</td>
+<td>{{bob.hobbies}}</td>
+<td>{{bob.DOJ}}</td>
+</tr>
+</ng-template>
+<ng-template ngif="mydate === 3" class="green" #first>
+<tr *ngFor="let bob of myarr">
+<td>{{bob.empid}}</td>
+<td>{{bob.name}}</td>
+<td>{{bob.address}}</td>
+<td>{{bob.gender}}</td>
+<td>{{bob.hobbies}}</td>
+<td>{{bob.DOJ}}</td>
+</tr>
+</ng-template>
+<tr *ngFor="let bob of yourarr">
+    <td>{{bob.empid}}</td>
+    <td>{{bob.name}}</td>
+    <td>{{bob.address}}</td>
+    <td>{{bob.gender}}</td>
+    <td>{{bob.hobbies}}</td>
+    <td>{{bob.DOJ}}</td>
+    </tr>
+</table>
+<div class="d-flex justify-center mt-5">
+<button class="btn btn-danger mx-auto text-center" (click) = "marray()">Sort Names</button>
+</div>
+</div>
+</div>
+</div>
